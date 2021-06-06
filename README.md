@@ -1,2 +1,2 @@
-# juno-web-exp
-The web experience of Juno
+# JUNO
+This project is based in the web application for Juno, one person creative studio
