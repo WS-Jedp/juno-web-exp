@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'TimesNewRoman';
+    src: url("../../fonts/serif/TIMES.TTF");
+}
+@font-face {
+    font-family: 'TimesNewRomanBold';
+    src: url("../../fonts/serif/TIMESBD.TTF");
+}
+@font-face {
+    font-family: 'TimesNewRomanItalic';
+    src: url("../../fonts/serif/TIMESI.TTF");
+}
+@font-face {
+    font-family: 'TimesNewRomanBold';
+    src: url("../../fonts/serif/TIMESBI.TTF");
+}
+
+$font-sans: 'Noto Sans JP', sans-serif; 
+$font-serif: 'TimesNewRoman', serif;
+
+$font-size-sm: 2.1rem;
+$font-size-md: 2.4rem;
+$font-size-lg: 3rem;
+$font-size-xl: 3.6rem;
+
+$font-title-sm: 10rem;
+$font-title-md: 10rem;
+$font-title-lg: 10rem;

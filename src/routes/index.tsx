@@ -6,7 +6,7 @@ export const App:React.FC = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/" component={() => (<div>Hello world</div>)} />
+                <Route path="/" component={() => (<div><h1>Hello world</h1></div>)} />
             </Switch>
         </Router>
     )
