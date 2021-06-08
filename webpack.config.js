@@ -61,6 +61,13 @@ module.exports = {
                     loader: 'file-loader'
                 }
             },
+            {
+                test: /\.(TTF)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'file-loader'
+                }
+            },
         ]
     },
     plugins: [

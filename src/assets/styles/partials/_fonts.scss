@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'TimesNewRoman';
+    src: url("../../fonts/serif/TIMES.TTF");
+}
+@font-face {
+    font-family: 'TimesNewRomanBold';
+    src: url("../../fonts/serif/TIMESBD.TTF");
+}
+@font-face {
+    font-family: 'TimesNewRomanItalic';
+    src: url("../../fonts/serif/TIMESI.TTF");
+}
+@font-face {
+    font-family: 'TimesNewRomanBold';
+    src: url("../../fonts/serif/TIMESBI.TTF");
+}
+
+$font-sans: 'Noto Sans JP', sans-serif; 
+$font-serif: 'TimesNewRoman', serif;
+
+$text-size-base: 1.8rem;
+$text-size-sm: 2.1rem;
+$text-size-md: 2.4rem;
+$text-size-lg: 3rem;
+$text-size-xl: 3.6rem;
+
+$title-size-sm: 9rem;
+$title-size-md: 12rem;
+$title-size-lg: 15rem;
+$title-size-xl: 18rem;
+
+
+.font-serif {
+    font-family: 'TimesNewRoman', serif;
+}
+.font-sans {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+.text-size- {
+    &base {
+        font-size: $text-size-base;
+    }
+    &sm {
+        font-size: $text-size-sm;
+    }
+    &md {
+        font-size: $text-size-md;
+    }
+    &lg {
+        font-size: $text-size-lg;
+    }
+    &xl {
+        font-size: $text-size-xl;
+    }
+}
+
+.title-size- {
+    &sm {
+        font-size: $title-size-sm;
+    }
+    &md {
+        font-size: $title-size-md;
+    }
+    &lg {
+        font-size: $title-size-lg;
+    }
+    &xl {
+        font-size: $title-size-xl;
+    }
+}
