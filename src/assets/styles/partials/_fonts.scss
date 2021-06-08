@@ -18,11 +18,55 @@
 $font-sans: 'Noto Sans JP', sans-serif; 
 $font-serif: 'TimesNewRoman', serif;
 
-$font-size-sm: 2.1rem;
-$font-size-md: 2.4rem;
-$font-size-lg: 3rem;
-$font-size-xl: 3.6rem;
+$text-size-base: 1.8rem;
+$text-size-sm: 2.1rem;
+$text-size-md: 2.4rem;
+$text-size-lg: 3rem;
+$text-size-xl: 3.6rem;
 
-$font-title-sm: 10rem;
-$font-title-md: 10rem;
-$font-title-lg: 10rem;
+$title-size-sm: 9rem;
+$title-size-md: 12rem;
+$title-size-lg: 15rem;
+$title-size-xl: 18rem;
+
+
+.font-serif {
+    font-family: 'TimesNewRoman', serif;
+}
+.font-sans {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+.text-size- {
+    &base {
+        font-size: $text-size-base;
+    }
+    &sm {
+        font-size: $text-size-sm;
+    }
+    &md {
+        font-size: $text-size-md;
+    }
+    &lg {
+        font-size: $text-size-lg;
+    }
+    &xl {
+        font-size: $text-size-xl;
+    }
+}
+
+.title-size- {
+    &sm {
+        font-size: $title-size-sm;
+    }
+    &md {
+        font-size: $title-size-md;
+    }
+    &lg {
+        font-size: $title-size-lg;
+    }
+    &xl {
+        font-size: $title-size-xl;
+    }
+}

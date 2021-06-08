@@ -17,3 +17,47 @@ $color-gray-70: #ACA7B8;
 
 $color-dark: #101217;
 $color-light: #E6DFF5;
+
+:root {
+    --color-primary: $color-dark;
+    --color-secondary: $color-light; 
+}
+
+.color-{
+    &black {
+        color: $color-dark;
+    }
+    &light {
+        color: $color-light;
+    }
+    &main {
+        color: $color-main;
+        &-70 {
+            color: $color-main-70;
+        }
+        &-30 {
+            color: $color-main-30;
+        }
+    }
+    &purple {
+        color: $color-purple;
+        &-70 {
+            color: $color-purple-70;
+        }
+        &-30 {
+            color: $color-purple-30;
+        }
+    }
+    &light-blue {
+        color: $color-light-blue;
+        &-70 {
+            color: $color-light-blue-70;
+        }
+    }
+    &gray {
+        color: $color-gray;
+        &-70 {
+            color: $color-gray-70;
+        }
+    }
+} 
