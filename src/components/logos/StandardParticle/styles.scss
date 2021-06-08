@@ -1,0 +1,20 @@
+.cls-1, .svg-black { 
+    fill:#101217;
+    transition: .6s ease;
+}
+.cls-2, .svg-line-black {
+    fill:none;
+    stroke:#101217;
+    stroke-miterlimit:10;
+    stroke-width:2px;
+    transition: .6s ease;
+}
+
+.svg-white {
+    fill:#E6DFF5;
+    transition: .6s ease;
+}
+.svg-line-white {
+    stroke:#E6DFF5;   
+    transition: .6s ease;
+}
