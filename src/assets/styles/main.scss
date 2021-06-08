@@ -29,7 +29,7 @@ h3 {
     font-family: 'Noto Sans JP';
 }
 
-p {
+p, b, i {
     font-size: $text-size-sm;
     color: var(--color-primary);
 }
