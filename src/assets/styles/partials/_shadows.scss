@@ -1,3 +1,5 @@
+@use './colors' as *;
+
 @mixin shadow($color: $color-dark, $x: 0, $y: 0, $size: .9rem, $blur: .9rem, $opacity: .3) {
     box-shadow: $x $y $blur $size rgba($color, $opacity);
 }

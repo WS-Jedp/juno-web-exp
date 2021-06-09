@@ -6,5 +6,8 @@ module.exports = {
     transform: {
         "^.+\\.ts(x)?$": "ts-jest"
     },
-    testRegex: "(/__tests__/.*|(\\.|/))(test|spec)\\.ts(x)?$"
+    testRegex: "(/__tests__/.*|(\\.|/))(test|spec)\\.ts(x)?$",
+    moduleNameMapper: {
+        "\\.(scss|sass|jpg|png|svg|jpeg|mp4)$": "<rootDir>/src/__tests__/mocks/filesMocks.js"
+      }
 }
