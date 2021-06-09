@@ -1,0 +1,9 @@
+.basic-layout {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}

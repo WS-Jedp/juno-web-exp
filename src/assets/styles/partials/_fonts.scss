@@ -18,6 +18,8 @@
 $font-sans: 'Noto Sans JP', sans-serif; 
 $font-serif: 'TimesNewRoman', serif;
 
+$text-size-base-sm: 1.2rem;
+$text-size-base-md: 1.5rem;
 $text-size-base: 1.8rem;
 $text-size-sm: 2.1rem;
 $text-size-md: 2.4rem;
@@ -30,17 +32,39 @@ $title-size-lg: 15rem;
 $title-size-xl: 18rem;
 
 
-.font-serif {
-    font-family: 'TimesNewRoman', serif;
-}
-.font-sans {
-    font-family: 'Noto Sans JP', sans-serif;
+.font- {
+    &serif {
+        font-family: 'TimesNewRoman', serif;
+    }
+    &sans {
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    &ligth {
+        font-weight: 300;
+    }
+    &thin {
+        font-weight: 100;
+    }
+    &bold {
+        font-weight: 700;
+    }
+    &black {
+        font-weight: 900;
+    }
 }
 
 
 .text-size- {
     &base {
         font-size: $text-size-base;
+
+        &-sm {
+            font-size: $text-size-base-sm;
+        }
+        &-md {
+            font-size: $text-size-base-md;
+        }
     }
     &sm {
         font-size: $text-size-sm;
