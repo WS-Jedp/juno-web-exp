@@ -19,8 +19,8 @@ $color-dark: #101217;
 $color-light: #E6DFF5;
 
 :root {
-    --color-primary: $color-dark;
-    --color-secondary: $color-light; 
+    --color-primary: #{$color-dark};
+    --color-secondary: #{$color-light}; 
 }
 
 .color-{
@@ -59,5 +59,12 @@ $color-light: #E6DFF5;
         &-70 {
             color: $color-gray-70;
         }
+    }
+
+    &primary {
+        color: var(--color-primary);
+    }
+    &secondary {
+        color: var(--color-secondary);
     }
 } 
