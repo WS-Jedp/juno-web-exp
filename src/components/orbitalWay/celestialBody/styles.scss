@@ -1,0 +1,61 @@
+@use '../../../assets/styles/partials' as *;
+
+.celestial-body-orbital-way {
+    position: relative;
+    display: flex;
+    width: 18px;
+    height: 18px; 
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &__body {
+        width: 18px;
+        height: 3px;
+        background-color: var(--color-secondary);
+        cursor: pointer;
+        @include shadow(var(--color-secondary), 0, 0, 0, 0, .0);
+        @include transition(.6s);
+    }
+    &:hover &__body {
+        animation: lineIntoBody .6s ease-in-out both;
+    }
+
+    &__information {
+        position: absolute;
+        right: 0%;
+        margin-right: 0;
+        opacity: 0;
+        @include transition(.6s);
+    }
+    &:hover &__information {
+        opacity: 1;
+        right: 100%;
+        margin-right: $space-base-sm;
+
+        @include desktop-sm {
+            margin-right: $space-base-md;
+        }
+    }
+}
+
+
+@keyframes lineIntoBody {
+    0% {
+        width: 18px;
+        height: 3px;
+        border-radius: 0;
+    }
+
+    50% {
+        width: 6px;
+        height: 6px;
+    }
+
+    100% {
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+    }
+}
