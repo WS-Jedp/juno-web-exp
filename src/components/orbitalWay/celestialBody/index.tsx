@@ -7,7 +7,8 @@ import './styles.scss'
 export interface CelestialBodyProps {
     title: string,
     abstract: string,
-    link: string
+    link: string,
+    color?: 'black' | 'white'
 }
 
 const variants = {
@@ -22,7 +23,7 @@ const variants = {
     }
 }
 
-export const CelestialBodyFromOrbitalWay:React.FC<CelestialBodyProps> = ({ title, abstract, link }) => {
+export const CelestialBodyFromOrbitalWay:React.FC<CelestialBodyProps> = ({ title, abstract, link, color = 'white' }) => {
 
     return (
         <m.li variants={variants} className="celestial-body-orbital-way">
@@ -31,9 +32,10 @@ export const CelestialBodyFromOrbitalWay:React.FC<CelestialBodyProps> = ({ title
                     title={title}
                     abstract={abstract}
                     link={link}
+                    color={color}
                 />
             </div>
-            <div className="celestial-body-orbital-way__body" />
+            <div className={`celestial-body-orbital-way__body bg-${color == 'white' ? 'secondary' : 'primary'}`} />
         </m.li>
     )
 }

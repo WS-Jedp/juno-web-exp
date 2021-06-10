@@ -1,10 +1,11 @@
 import React from 'react'
 import { motion as m } from 'framer-motion'
-import { CelestialBodyFromOrbitalWay } from './celestialBody'
+import { CelestialBodyFromOrbitalWay, CelestialBodyProps } from './celestialBody'
 import './styles.scss'
 
 interface OrbitalWayProps {
-    celestialBodies: {title: string, abstract: string, link: string}[],
+    celestialBodies: CelestialBodyProps[],
+    color?: 'black' | 'white'
 }
 
 const variants = {
@@ -19,11 +20,11 @@ const variants = {
     }
 }
 
-export const OrbitalWay:React.FC<OrbitalWayProps> =  ({ celestialBodies = [] }) => {
+export const OrbitalWay:React.FC<OrbitalWayProps> =  ({ celestialBodies = [], color = 'white' }) => {
 
     return (
-        <div className="orbital-way-container">
-            <m.ul variants={variants} initial="initial" animate="animate" className="orbital-way">
+        <div className="orbital-way-container" data-testid="orbital-way-container">
+            <m.ul variants={variants} initial="initial" animate="animate" className={`bg-${color == 'black' ? 'primary' : 'secondary'} orbital-way`}>
                 {
                     celestialBodies.map(celestialBody => (
                         <CelestialBodyFromOrbitalWay 
@@ -31,6 +32,7 @@ export const OrbitalWay:React.FC<OrbitalWayProps> =  ({ celestialBodies = [] }) 
                             title={celestialBody.title}
                             abstract={celestialBody.abstract}
                             link={celestialBody.link}
+                            color={color}
                         />
                     ))
                     }
