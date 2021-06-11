@@ -4,7 +4,7 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import { IdeaCategoryCard } from '../components/ideas/categoryCard'
+import { AllyCard } from '../components/allies/card'
 
 export const App:React.FC = () => {
 
@@ -16,24 +16,9 @@ export const App:React.FC = () => {
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <IdeaCategoryCard 
-                            title="Articles"
-                            abstract="Learn Something New"
-                            link="/articles"
-                            color="main"
-                        />
-                        <IdeaCategoryCard 
-                            title="Articles"
-                            abstract="Learn Something New"
-                            link="/articles"
-                            color="light-blue"
-                        />
-                        <IdeaCategoryCard 
-                            title="Articles"
-                            abstract="Learn Something New"
-                            link="/articles"
-                            color="purple"
-                        />
+                        <h1 className="color-secondary">
+                            Testing
+                        </h1>
                     </BasicLayout>)} />
             </Switch>
         </Router>
