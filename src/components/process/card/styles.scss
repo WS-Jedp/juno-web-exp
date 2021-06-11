@@ -1,0 +1,171 @@
+@use '../../../assets/styles/partials' as *;
+
+.process-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    min-width: 180px;
+    width: 30%;
+    max-width: 180px;
+    min-height: 240px;
+    height: 240px;
+    max-height: 240px;
+    padding: $space-base-lg;
+    @include transition(.9s);
+    cursor: pointer;
+    overflow: hidden;
+
+    @include tablet {
+        min-width: 210px;
+        width: 210px;
+        max-width: 210px;
+        min-height: 300px;
+        height: 300px;
+        max-height: 300px;
+        padding: $space-sm-sm;
+    }
+
+    @include desktop-sm {
+        min-width: 240px;
+        width: 240px;
+        max-width: 240px;
+        min-height: 300px;
+        height: 300px;
+        max-height: 300px;
+        padding: $space-base-xl;
+    }
+
+    &--detail {
+        width: auto;   
+        max-width: 300px;
+        height: auto;
+        max-height: initial;
+        @include transition(.6s);
+
+        @include tablet {
+            max-width: 450px;
+        }
+        @include desktop-sm {
+            min-width: 720px;
+            max-width: 900px;
+            height: auto;
+            max-height: 600px;
+        }
+    }
+
+    & h3 {
+        font-size: $text-size-sm;
+        @include tablet {
+            font-size: $text-size-md;
+        }
+        @include desktop-sm {
+            font-size: $text-size-xl;
+        }
+    }
+
+    & h4 {
+        font-size: $text-size-base;
+        font-weight: 500;
+        @include tablet {
+            font-size: $text-size-sm;
+        }
+        @include desktop-sm {
+            font-size: $text-size-md;
+        }
+    }
+
+    &__purposes {
+        animation: animationParagraph .9s ease-in-out;
+    }
+
+    & .process-card__list  {
+        display: flex;
+        flex-flow: row wrap;
+
+        &-circle {
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+            border: 1.5px solid var(--color-secondary);
+            background-color: var(--color-primary);
+            margin-right: $space-base-md;
+        }
+        & li {
+            font-size: $text-size-base;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            margin: $space-base-lg 0;
+            margin-right: $space-base-xl;
+
+
+            @include tablet {
+                font-size: $text-size-sm;
+            }
+            @include desktop-sm {
+                font-size: $text-size-md;
+            }
+        }
+    }
+
+    & p {
+        font-size: $text-size-base-md;
+        @include tablet {
+            font-size: $text-size-base;
+        }
+        @include desktop-sm {
+            font-size: $text-size-sm;
+        }
+    }
+
+    &__description {
+        animation: animationParagraph .9s ease-in-out;
+    }
+
+    & span {
+        font-size: $text-size-base-md;
+        &:hover {
+            text-decoration: underline;
+        }
+        @include tablet {
+            font-size: $text-size-base-md;
+        }
+        @include tablet {
+            font-size: $text-size-base;
+        }
+    }
+
+    &--color-{
+        &white {
+            border: 1px solid var(--color-secondary);
+            &:hover {
+                @include shadow($color-light, 0, 0, .1rem, 1.5rem, .1);
+            }
+        }
+
+        &black {
+            border: 1px solid var(--color-primary);
+            &:hover {
+                @include shadow($color-dark, 0, 0, .1rem, 1.5em, .6);
+            }
+        }
+    }
+}
+
+
+@keyframes animationParagraph {
+    0% {
+        transform: translateY(-10);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        height: auto;
+    }
+}
