@@ -25,11 +25,14 @@ export const GeneralProvider:React.FC = ({children}) => {
             setTheme('light')
             document.documentElement.style.setProperty('--color-primary', '#E5DFF6')
             document.documentElement.style.setProperty('--color-secondary', '#101217')
+            document.documentElement.style.setProperty('--color-secondary-rgb', '16, 18, 23')
+            document.documentElement.style.setProperty('--color-primary-rgb', '230, 223, 245')
         } else {
             setTheme('dark')
             document.documentElement.style.setProperty('--color-primary', '#101217')
             document.documentElement.style.setProperty('--color-secondary', '#E5DFF6')
-
+            document.documentElement.style.setProperty('--color-secondary-rgb', '230, 223, 245')
+            document.documentElement.style.setProperty('--color-primary-rgb', '16, 18, 23')
         }
     }
 

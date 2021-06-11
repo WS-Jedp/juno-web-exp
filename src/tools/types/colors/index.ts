@@ -1,0 +1,1 @@
+export type AvailableColors = 'black' | 'white' | 'purple' | 'main' | 'light-blue' | 'primary' | 'secondary'

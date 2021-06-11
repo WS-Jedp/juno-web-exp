@@ -18,9 +18,15 @@ $color-gray-70: #ACA7B8;
 $color-dark: #101217;
 $color-light: #E6DFF5;
 
+$color-light-rgb: 230, 223, 245;
+$color-dark-rgb: 16, 18, 23;
+
 :root {
     --color-primary: #{$color-dark};
     --color-secondary: #{$color-light}; 
+
+    --color-primary-rgb: #{$color-dark-rgb};
+    --color-secondary-rgb: #{$color-light-rgb};
 }
 
 .color-{
@@ -67,4 +73,22 @@ $color-light: #E6DFF5;
     &secondary {
         color: var(--color-secondary);
     }
-} 
+}
+
+.bg- {
+    &dark {
+        background-color: $color-dark;
+    }
+    &light {
+        background-color: $color-light;
+    }
+    &main {
+        background-color: $color-main;
+    }
+    &purple {
+        background-color: $color-purple;
+    }
+    &light-blue {
+        background-color: $color-light-blue;
+    }
+}
