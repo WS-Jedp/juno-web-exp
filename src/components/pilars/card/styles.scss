@@ -1,0 +1,119 @@
+@use '../../../assets/styles/partials' as *;
+
+.pilar-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 72%;
+    max-width: 300px;
+    height: 150px;
+    padding: $space-base-xl;
+    cursor: pointer;
+    @include transition(.6s);
+
+    @include tablet {
+        width: 42%;
+        max-width: 420px;
+        height: 180px;
+    }
+
+    @include desktop-sm {
+        width: 30%;
+        max-width: 240px;
+        height: 360px;
+        padding: $space-sm-md;
+    }
+
+    &--description {
+        justify-content: flex-start;
+        height: 270px;
+        
+        @include desktop-sm {
+            height: 360px;
+        }
+
+        & .pilar-card__description {
+            overflow: hidden;
+            overflow-y: scroll;
+            font-size: $text-size-base-md;
+
+            @include desktop-sm {    
+                display: block;
+                font-size: $text-size-base-md;
+            }
+        }
+    }
+
+    &__action {
+        justify-self: flex-end;
+        margin-top: $space-base-xl;
+    }
+
+    & span {
+        font-size: $text-size-md;
+        @include tablet {
+            font-size: $text-size-lg;
+        }
+
+        @include desktop-sm {
+            font-size: $text-size-xl;
+        }
+    }
+
+    & h2 {
+        font-size: $text-size-lg;
+        @include tablet {
+            font-size: $text-size-lg;
+        }
+
+        @include desktop-sm {
+            font-size: $text-size-xl;
+        }
+    }
+
+    &__description {
+        
+    }
+
+    &--color- {
+        &main {
+            @include shadow($color-main, 0, 0, .6rem, 1.2rem, .0); 
+            border: 1px solid $color-main;
+
+            &:hover {
+                @include shadow($color-main, 0, 0, .1rem, 6rem, .42); 
+                background-color: $color-main;
+                & span, & h2, & a, & p {
+                    color: $color-light;
+                }
+            }
+        }
+
+        &purple {
+            @include shadow($color-purple, 0, 0, .6rem, 1.2rem, .0); 
+            border: 1px solid $color-purple;
+
+            &:hover {
+                @include shadow($color-purple, 0, 0, .1rem, 6rem, .42); 
+                background-color: $color-purple;
+                & span, & h2, & a, & p {
+                    color: $color-light;
+                }
+            }
+        }
+
+        &light-blue {
+            @include shadow($color-light-blue, 0, 0, .6rem, 1.2rem, .0); 
+            border: 1px solid $color-light-blue;
+
+            &:hover {
+                @include shadow($color-light-blue, 0, 0, .1rem, 6rem, .42); 
+                background-color: $color-light-blue;
+                & span, & h2, & a, & p {
+                    color: $color-light;
+                }
+            }
+        }
+
+    }
+}
