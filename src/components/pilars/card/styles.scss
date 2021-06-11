@@ -71,10 +71,6 @@
         }
     }
 
-    &__description {
-        
-    }
-
     &--color- {
         &main {
             @include shadow($color-main, 0, 0, .6rem, 1.2rem, .0); 

@@ -1,0 +1,98 @@
+@use '../../../assets/styles/partials' as *;
+
+.idea-category-card {
+    width: 81%;
+    max-width: 330px;
+    height: 120px;
+    padding: $space-sm-sm;
+    cursor: pointer;
+    @include transition(.6s);
+
+    @include tablet {
+        width: 42%;
+        max-width: 240px;
+        height: 120px;
+        padding: $space-base-xl;
+    }
+
+    @include desktop-sm {
+        width: 30%;
+        max-width: 300px;
+        height: 150px;
+        padding: $space-sm-sm;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    & h2 {
+        font-size: $text-size-lg;
+        margin-bottom: $space-base-md;
+        
+        @include tablet {
+            font-size: $text-size-xl;
+        }
+    }
+
+
+    & p {
+        color: var(--color-secondary);
+        font-size: $text-size-base-md;
+        
+        @include tablet {
+            font-size: $text-size-base;
+        }
+    }
+
+    &--color-main {
+        @include shadow($color-main, 0, 0, .6rem, .9rem, .0); 
+        border: 1px solid $color-main;
+
+        & h2 {
+            color: $color-main;
+        }
+
+        &:hover {
+            @include shadow($color-main, 0, 0, .1rem, 3rem, .42); 
+            background-color: $color-main;
+            & span, & h2, & a, & p {
+                color: $color-light;
+            }
+        }
+    }
+
+
+    &--color-purple {
+        @include shadow($color-purple, 0, 0, .6rem, 1.2rem, .0); 
+        border: 1px solid $color-purple;
+
+        & h2 {
+            color: $color-purple;
+        }
+
+        &:hover {
+            @include shadow($color-purple, 0, 0, .1rem, 3rem, .42); 
+            background-color: $color-purple;
+            & span, & h2, & a, & p {
+                color: $color-light;
+            }
+        }
+    }
+    &--color-light-blue {
+        @include shadow($color-light-blue, 0, 0, .6rem, 1.2rem, .0); 
+        border: 1px solid $color-light-blue;
+
+        & h2 {
+            color: $color-light-blue;
+        }
+
+        &:hover {
+            @include shadow($color-light-blue, 0, 0, .1rem, 3rem, .42); 
+            background-color: $color-light-blue;
+            & span, & h2, & a, & p {
+                color: $color-light;
+            }
+        }
+    }
+}
