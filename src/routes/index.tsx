@@ -4,7 +4,7 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import { PilarCard } from '../components/pilars/card'
+import { IdeaCategoryCard } from '../components/ideas/categoryCard'
 
 export const App:React.FC = () => {
 
@@ -16,10 +16,22 @@ export const App:React.FC = () => {
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <PilarCard 
-                            index={1}
-                            title="Science"
-                            link="/science"
+                        <IdeaCategoryCard 
+                            title="Articles"
+                            abstract="Learn Something New"
+                            link="/articles"
+                            color="main"
+                        />
+                        <IdeaCategoryCard 
+                            title="Articles"
+                            abstract="Learn Something New"
+                            link="/articles"
+                            color="light-blue"
+                        />
+                        <IdeaCategoryCard 
+                            title="Articles"
+                            abstract="Learn Something New"
+                            link="/articles"
                             color="purple"
                         />
                     </BasicLayout>)} />
