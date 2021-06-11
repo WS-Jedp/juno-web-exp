@@ -8,28 +8,28 @@ export interface ProcessCardProps {
     description: string,
     purposes: string[],
     color?: 'white' | 'black',
-    showDetail?: boolean,
-    onAction?: () => void
 }
 
-export const ProcessCard:React.FC<ProcessCardProps> = ({ title, description, abstract, purposes, color = 'white', showDetail = false, onAction = () => {} }) => {
+export const ProcessCard:React.FC<ProcessCardProps> = ({ title, description, abstract, purposes, color = 'white',}) => {
 
     const [show, setShow] = useState<boolean>(false)
 
-    
     return (
-        <article className={`process-card process-card--color-${color} ${show ? 'process-card--detail' : ''}`} onClick={() => setShow(!show)}>
+        <article className={`m-md process-card process-card--color-${color} ${show ? 'process-card--detail' : ''}`} onClick={() => setShow(!show)} data-testid="process-card-container">
             <Content
                 color={color}
             >
                 <h3 className="font-sans"> {title} </h3>
-                {
-                    !show ? (
-                        <p className="font-sans p-b-md p-t-md"> {abstract} </p>
-                    ) : (
-                        <p className="font-sans p-b-md p-t-md process-card__description"> {description} </p>
-                    )
-                }
+                <div className="process-card__paragraphs">
+                    {
+                        !show ? (
+                            <p className="font-sans p-b-md p-t-md"> {abstract} </p>
+                        ) : (
+                            <p className="font-sans p-b-md p-t-md process-card__description"> {description} </p>
+                        )
+                    }
+                </div>
+
                 {
                     show && (
                         <div className="process-card__purposes">
