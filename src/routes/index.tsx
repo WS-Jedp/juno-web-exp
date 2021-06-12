@@ -4,8 +4,7 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import Image from '../assets/images/2x/CelestialBody-Black@2x.png'
-import { StoryCard } from '../components/stories/card'
+import { StudyCard } from '../components/studies/card'
 
 export const App:React.FC = () => {
 
@@ -17,9 +16,26 @@ export const App:React.FC = () => {
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <h1>
-                            Building!
-                        </h1>
+                        <StudyCard 
+                            pilar="science"
+                            title="Physics"
+                            description="Understanding how works the world to change it"
+                            purposes={['storytelling', 'ux']}
+                        />
+                        <StudyCard 
+                            pilar="art"
+                            title="Blender"
+                            description="3D model software to create unique experiences"
+                            purposes={['branding', 'ux']}
+                        />
+                        <StudyCard 
+                            pilar="technology"
+                            title="Nanotechnology"
+                            description="From particles to stars"
+                            purposes={['Research']}
+                        />
+
+                        <button onClick={handleTheme}>Theme</button>
 
                     </BasicLayout>)} />
             </Switch>
