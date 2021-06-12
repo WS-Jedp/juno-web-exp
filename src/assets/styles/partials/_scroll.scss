@@ -6,19 +6,20 @@
     width: 3.3px;
     height: 3.3px;
     margin: 0 $space-base-md;
+    opacity: .3;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: $color-gray;
+    background: rgba(var(--color-secondary-rgb), .1);
     &:hover {
-        box-shadow: 0 0 1.2rem .9rem rgba(var(--color-secondary), .1);
+        box-shadow: 0 0 1.2rem .9rem rgba($color-light, .1);
     }
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: $color-gray;
+    background: $color-gray-70;
   }
   
   /* Handle on hover */
