@@ -4,8 +4,6 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import { AllyCard } from '../components/allies/card'
-
 export const App:React.FC = () => {
 
     const { handleTheme } = useContext(GeneralContext)
@@ -16,9 +14,7 @@ export const App:React.FC = () => {
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <h1 className="color-secondary">
-                            Testing
-                        </h1>
+                        <h1>Building!</h1>
                     </BasicLayout>)} />
             </Switch>
         </Router>
