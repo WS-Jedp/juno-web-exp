@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
 
-interface LocationCardProps {
+export interface LocationCardProps {
     title: string,
     abstract: string,
     link: string
