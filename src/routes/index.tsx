@@ -4,7 +4,7 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import { OrbitalWayStandard } from '../components/orbitalWay/standard'
+import { LocationCard } from '../components/location/card'
 
 export const App:React.FC = () => {
 
@@ -15,7 +15,8 @@ export const App:React.FC = () => {
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        Building
+                        <h1 className="color-secondary">Juno</h1>
+                        <p className="color-secondary">Son of humankind</p>
                     </BasicLayout>)} />
             </Switch>
         </Router>
