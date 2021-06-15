@@ -15,7 +15,8 @@ export const App:React.FC = () => {
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <h1 className="color-secondary">Building</h1>
+                        <h1 className="color-primary">Building</h1>
+                        <button onClick={handleTheme}>theme</button>
 
                     </BasicLayout>)} />
             </Switch>

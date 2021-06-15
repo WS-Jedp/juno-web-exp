@@ -5,7 +5,7 @@ import { defineBackgroundColor } from '../../tools/functions/defineBackgroundCol
 import { AnimatePresence } from 'framer-motion'
 
 import { LogoParticle } from '../../components/logos/Particle'
-import { LogoWaves } from '../../components/logos/Waves'
+import { LogoWaves } from '../../components/logos/Waves/black'
 import './styles.scss'
 
 interface Header {
@@ -19,9 +19,12 @@ export const Header:React.FC<Header> = ({ color = 'primary' }) => {
     return (
         <header className={`${defineBackgroundColor({color})} header ${showLocations && 'header--show-locations'} header--color-${color}`}>
             <article className="flex flex-row align-center justify-between header__menu">
-                <div className="flex flex-flow font-serif">
-                    Juno
-                </div>
+                <a href="/" className="flex flex-row align-center justify-start font-serif header__juno-logo">
+                    <LogoWaves color={`${color == 'purple' || color == 'black' || color == 'primary' ? 'white' : 'black'}`} />
+                    <h1 className="font-serif">
+                        juno
+                    </h1>
+                </a>
                 <div className="font-serif header__particle" onClick={() => setShowLocations(!showLocations)}>
                     <LogoParticle color={`${color == 'purple' || color == 'black' || color == 'primary' ? 'white' : 'black'}`} />
                 </div>

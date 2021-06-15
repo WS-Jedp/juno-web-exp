@@ -43,6 +43,7 @@ const variantsLocations = {
     exit: {
         opacity: 0,
         width: 0,
+        x: -100,
         transition: {
             duration: .9,
             when: 'beforeChildren'
@@ -66,20 +67,20 @@ export const Locations:React.FC<Locations> = ({ color = 'primary', defaultLocati
 
     return (
         <m.section variants={variantsLocations} initial="initial" animate="animate" exit="exit" className={`${defineBackgroundColor({color})} locations`}>
-            <div className="locations__options">
+            <m.div className="locations__options">
                 <LocationOrbit locations={locations.map(location => location.locationOption)} selected={defaultLocation} />
-            </div>
+            </m.div>
             <m.ul variants={variantsOptions} initial="initial" animate="animate" className="locations__contents">
                 {
                     contents.map(content => (
-                        <LocationCard 
-                            key={content.title}
-                            title={content.title}
-                            link={content.link}
-                            abstract={content.abstract}
-                        />
+                            <LocationCard 
+                                key={content.title}
+                                title={content.title}
+                                link={content.link}
+                                abstract={content.abstract}
+                            />
                         ))
-                    }
+                }
             </m.ul>
         </m.section>
     )

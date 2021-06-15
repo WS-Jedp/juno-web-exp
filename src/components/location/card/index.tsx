@@ -12,7 +12,6 @@ export interface LocationCardProps {
 
 export const LocationCard:React.FC<LocationCardProps> = ({ abstract, link, title }) => {
 
-
     return (
         <m.a variants={AnimationLeftToRight(TransitionSlow)} href={link} className="flex flex-col align-start justify-center location-card">
             <h2 className="font-sans font-bold">{title}</h2>

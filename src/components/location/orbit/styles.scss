@@ -73,7 +73,6 @@
                 border: 1px solid var(--color-secondary);
                 position: absolute;
                 right: -21px;
-                top: 0;
                 margin: auto;
 
                 @include tablet {
@@ -91,15 +90,12 @@
         }
 
         &--selected {
-            & a {
-                color: $color-purple;
-            }
             &::before {
                 content: '';
                 width: 12px;
                 height: 12px;
                 border-radius: 100%;
-                background-color: $color-purple;
+                background-color: var(--color-secondary);
                 position: absolute;
                 right: -6px;
                 margin: auto;
