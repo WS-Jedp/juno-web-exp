@@ -4,7 +4,7 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import { StudyProgress } from '../components/studies/progress'
+import { ButtonCircle } from '../components/buttons/circle'
 
 export const App:React.FC = () => {
 
@@ -16,8 +16,7 @@ export const App:React.FC = () => {
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <h1>Building</h1>
-                        <button onClick={handleTheme}>Theme</button>
+                        <ButtonCircle title="Theme" color="primary" action={handleTheme} />
 
                     </BasicLayout>)} />
             </Switch>

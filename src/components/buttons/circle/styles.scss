@@ -1,0 +1,40 @@
+@use '../../../assets/styles/partials' as *;
+
+.button-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 100;
+
+    @include transition(.9s);
+
+    &:hover {
+        transform: scale(1.12);
+    }
+
+    &.bg-secondary {
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        box-shadow: 0 0 1.2rem .1rem rgba(var(--color-primary   -rgb), .3);
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+            box-shadow: 0 0 0 0 rgba(var(--color-secondary-rgb), 0);
+
+        }
+    }
+
+    &.bg-primary {
+        border: 1px solid var(--color-secondary);
+        color: var(--color-secondary);
+        box-shadow: 0 0 1.2rem .1rem rgba(var(--color-secondary-rgb), .3);
+        &:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            box-shadow: 0 0 0 0 rgba(var(--color-secondary-rgb), 0);
+
+        }
+    }
+}
