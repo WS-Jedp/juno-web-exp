@@ -4,7 +4,6 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import { LocationOrbit } from '../components/location/orbit'
 
 export const App:React.FC = () => {
 

@@ -4,7 +4,7 @@ import { AnimationLeftToRight } from '../../../assets/styles/animations/variants
 import { TransitionSlow } from '../../../assets/styles/animations/transitions'
 import './styles.scss'
 
-type Location = {
+export type Location = {
     title: string,
     link: string,
     action: (title: string) => void

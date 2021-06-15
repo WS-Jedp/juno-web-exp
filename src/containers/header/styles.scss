@@ -1,0 +1,68 @@
+@use '../../assets/styles/partials' as *;
+
+.header {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    padding: $space-sm-md;
+    z-index: 99;
+    @include transition(.9s);
+    @include shadow($color-dark, 0, 1px, .1rem, 1.2rem, .6);
+
+    @include desktop-sm {
+        height: 90px;
+    }
+
+
+    &__particle {
+        & svg {       
+            width: 42px;
+            height: 42px;
+
+            @include desktop-sm {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+    &__menu {
+        margin: auto;   
+        padding: $space-sm-md;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    
+    &--show-locations {
+        box-shadow: none;
+    }
+
+    
+
+    &--color- {
+        &primary {
+            color: var(--color-secondary);
+        }
+        &secondary {
+            color: var(--color-primary);
+        }
+
+        &white {
+            color: $color-light;
+        }
+
+        &dark {
+            color: $color-dark;
+        }
+    }
+
+
+}
