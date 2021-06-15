@@ -4,19 +4,20 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import { LocationCard } from '../components/location/card'
+import { LocationOrbit } from '../components/location/orbit'
 
 export const App:React.FC = () => {
 
     const { handleTheme } = useContext(GeneralContext)
+
 
     return (
         <Router>
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <h1 className="color-secondary">Juno</h1>
-                        <p className="color-secondary">Son of humankind</p>
+                        <h1 className="color-secondary">Building</h1>
+
                     </BasicLayout>)} />
             </Switch>
         </Router>
