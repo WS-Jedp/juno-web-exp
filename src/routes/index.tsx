@@ -16,10 +16,7 @@ export const App:React.FC = () => {
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <StudyProgress 
-                            celestialBodyName="Physics"
-                            junoPosition={50}
-                        />
+                        <h1>Building</h1>
                         <button onClick={handleTheme}>Theme</button>
 
                     </BasicLayout>)} />

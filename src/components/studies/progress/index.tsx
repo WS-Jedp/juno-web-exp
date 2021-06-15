@@ -46,7 +46,7 @@ export const StudyProgress:React.FC<StudyProgressProps> = ({ celestialBodyName, 
 
 
     return (
-        <section className={`relative flex flex-row align-center justify-center study-progress study-progress--color-${color}`}>
+        <section className={`relative flex flex-row align-center justify-center study-progress study-progress--color-${color}`} data-testid="study-progress-container">
 
             <m.div className="study-progress__orbit" variants={variants} initial="initial" animate="animate" />
 
