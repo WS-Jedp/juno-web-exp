@@ -1,0 +1,40 @@
+@use '../../../assets/styles/partials' as *;
+
+.orbital-way-standard {
+   border-left: 1px solid var(--color-secondary);
+   height: 100%;
+
+
+   &__item {
+        position: absolute;
+        left: -3px;
+        margin: $space-base-sm 0;
+        font-size: $text-size-base-md;
+        color: var(--color-secondary);
+
+
+       &--selected {
+           color: $color-main;
+           .orbital-way-standard__item-position {
+                height: 6px;
+                border-radius: 100%;
+           }
+       }
+       
+       &:hover {
+           text-decoration: none;
+           color: $color-main;
+           .orbital-way-standard__item-position {
+               height: 6px;
+               border-radius: 100%;
+           }
+       }
+   }
+
+   &__item-position {
+       width: 6px;
+       height: 1px;
+       background-color: var(--color-secondary);
+       margin-right: $space-base-md;
+   }
+}

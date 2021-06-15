@@ -4,20 +4,18 @@ import { BasicLayout } from '../layouts/basic'
 
 import { GeneralContext } from '../context/generalContext'
 
-import { ButtonCircle } from '../components/buttons/circle'
+import { OrbitalWayStandard } from '../components/orbitalWay/standard'
 
 export const App:React.FC = () => {
 
     const { handleTheme } = useContext(GeneralContext)
-
 
     return (
         <Router>
             <Switch>
                 <Route path="/" component={() => (
                     <BasicLayout>
-                        <ButtonCircle title="Theme" color="primary" action={handleTheme} />
-
+                        Building
                     </BasicLayout>)} />
             </Switch>
         </Router>
