@@ -1,0 +1,52 @@
+.w-cls-1,.w-cls-3,.w-cls-4{fill:none;}
+.w-cls-2{clip-path:url(#clip-path);}
+.w-cls-3{stroke:var(--color-secondary);}
+.w-cls-3,.w-cls-4{stroke-miterlimit:10;stroke-width:0.25px;}
+.w-cls-4{stroke:var(--color-primary);}
+.w-cls-5{fill:var(--color-secondary);}
+
+.svg-line-color- {
+    &black {
+        fill:none;
+        stroke: var(--color-primary);
+    }
+
+    &white {
+        fill:none;
+        stroke: var(--color-secondary);
+    }
+}
+
+.svg-path-color- {
+    &black {
+        fill:none;
+        stroke: var(--color-primary);
+    }
+
+    &white {
+        fill:none;
+        stroke: var(--color-secondary);
+    }
+}
+
+.svg-circle-color- {
+    &black {
+        fill:var(--color-primary);
+        stroke:var(--color-primary);
+    }
+
+    &white {
+        fill:var(--color-secondary);
+        stroke:var(--color-secondary);
+    }
+}
+
+.svg-rect-color- {
+    &black {
+        stroke:var(--color-primary);
+    }
+
+    &white {
+        stroke:var(--color-secondary);
+    }
+}

@@ -29,7 +29,7 @@
         background-color: $color-main;
         border: 1px solid $color-main;
         color: $color-light;
-        @include shadow($color-main, 0, 0, .1rem, 1.5rem, .3)
+        @include shadow($color-main, 0, 0, .1rem, .9rem, .3)
     } 
 
 
