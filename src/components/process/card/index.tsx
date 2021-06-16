@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import { Content } from '../../content'
-import './styles.scss'
 
 export interface ProcessCardProps {
     title: string,

@@ -5,7 +5,6 @@ import { locationsOptions } from '../../tools/functions/defineLocations'
 import { LocationCard, LocationCardProps } from '../../components/location/card'
 import { LocationOrbit } from '../../components/location/orbit'
 import { motion as m } from 'framer-motion'
-import './styles.scss'
 
 interface Locations {
     color?: AvailableColors,

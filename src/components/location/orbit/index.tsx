@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
 import { AnimationLeftToRight } from '../../../assets/styles/animations/variants'
 import { TransitionSlow } from '../../../assets/styles/animations/transitions'
-import './styles.scss'
 
 export type Location = {
     title: string,

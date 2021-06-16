@@ -1,5 +1,4 @@
 import React, { MouseEventHandler } from 'react'
-import './styles.scss'
 
 import { AvailableColors } from '../../../tools/types/colors'
 import { defineBackgroundColor } from '../../../tools/functions/defineBackgroundColor'

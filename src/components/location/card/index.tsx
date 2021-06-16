@@ -2,7 +2,6 @@ import React from 'react'
 import { motion as m } from 'framer-motion'
 import { TransitionSlow } from '../../../assets/styles/animations/transitions'
 import { AnimationLeftToRight } from '../../../assets/styles/animations/variants'
-import './styles.scss'
 
 export interface LocationCardProps {
     title: string,

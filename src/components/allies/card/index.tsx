@@ -1,5 +1,4 @@
 import React from 'react'
-import './styles.scss'
 
 import { defineCategoryColor } from '../../../tools/functions/defineCategoryColor'
 import { defineBackgroundColor } from '../../../tools/functions/defineBackgroundColor'

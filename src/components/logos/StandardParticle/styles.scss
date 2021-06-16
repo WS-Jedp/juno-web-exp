@@ -1,8 +1,8 @@
-.cls-1, .svg-black { 
+.sp-cls-1, .sp-svg-black { 
     fill:var(--color-primary);
     transition: .6s ease;
 }
-.cls-2, .svg-line-black {
+.sp-cls-2, .sp-svg-line-black {
     fill:none;
     stroke:var(--color-primary);
     stroke-miterlimit:10;
@@ -10,11 +10,11 @@
     transition: .6s ease;
 }
 
-.svg-white {
+.sp-svg-white {
     fill:var(--color-primary);
     transition: .6s ease;
 }
-.svg-line-white {
+.sp-svg-line-white {
     stroke:var(--color-primary);   
     transition: .6s ease;
 }

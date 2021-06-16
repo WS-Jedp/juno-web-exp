@@ -6,7 +6,6 @@ import { AnimatePresence } from 'framer-motion'
 
 import { LogoParticle } from '../../components/logos/Particle'
 import { LogoWaves } from '../../components/logos/Waves/black'
-import './styles.scss'
 
 interface Header {
     color?: AvailableColors

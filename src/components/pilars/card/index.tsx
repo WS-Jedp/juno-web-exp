@@ -1,8 +1,6 @@
 import React from 'react'
 import { Content } from '../../content'
 
-import './styles.scss'
-
 interface PilarCardProps {
     index: number,
     title: string,
