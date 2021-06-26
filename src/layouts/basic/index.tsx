@@ -5,13 +5,13 @@ import { Header } from '../../containers/header'
 export const BasicLayout:React.FC = ({ children }) => {
 
     return (
-        <>
+        <section className="bg-primary basic-layout">
             <Header />
-            <div className="bg-secondary basic-layout">
+            <section className="bg-primary basic-layout__content">
                 {
                     children
                 }
-            </div>
-        </>
+            </section>
+        </section>
     )
 }

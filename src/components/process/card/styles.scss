@@ -151,14 +151,14 @@
         &white {
             border: 1px solid var(--color-secondary);
             &:hover {
-                @include shadow($color-light, 0, 0, .1rem, 1.5rem, .1);
+                @include shadow($color-light, 0, 0, .1rem, .9rem, .1);
             }
         }
 
         &black {
             border: 1px solid var(--color-primary);
             &:hover {
-                @include shadow($color-dark, 0, 0, .1rem, 1.5em, .6);
+                @include shadow($color-dark, 0, 0, .1rem, .9em, .3);
             }
         }
     }

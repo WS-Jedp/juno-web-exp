@@ -53,7 +53,7 @@
         }
 
         &:hover {
-            @include shadow($color-main, 0, 0, .1rem, 3rem, .42); 
+            @include shadow($color-main, 0, 0, .1rem, 1.8rem, .42); 
             background-color: $color-main;
             & span, & h2, & a, & p {
                 color: $color-light;
@@ -71,7 +71,7 @@
         }
 
         &:hover {
-            @include shadow($color-purple, 0, 0, .1rem, 3rem, .42); 
+            @include shadow($color-purple, 0, 0, .1rem, 1.8rem, .42); 
             background-color: $color-purple;
             & span, & h2, & a, & p {
                 color: $color-light;
@@ -87,7 +87,7 @@
         }
 
         &:hover {
-            @include shadow($color-light-blue, 0, 0, .1rem, 3rem, .42); 
+            @include shadow($color-light-blue, 0, 0, .1rem, 1.8rem, .42); 
             background-color: $color-light-blue;
             & span, & h2, & a, & p {
                 color: $color-light;

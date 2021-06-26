@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface IdeaCategoryCardProps {
+export interface IdeaCategoryCardProps {
     title: string,
     abstract: string,
     color?: 'purple' | 'main' | 'light-blue',
