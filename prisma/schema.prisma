@@ -1,0 +1,128 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum PILARS {
+  SCIENCE
+  ART
+  TECHNOLOGY
+}
+
+// BEINGS
+model Being {
+  id                Int @id @default(autoincrement())
+  name              String
+  last_name         String
+  credentialsId     Credential?
+  partnerId         Partner?
+}
+
+model Partner {
+  id                Int @id @default(autoincrement())
+  description       String?
+  shortDescription  String
+  being             Being @relation(fields: [beingId], references: [id])
+  projects          Project[]
+  beingId           Int
+}
+
+model Credential {
+  id                Int @id @default(autoincrement())
+  username          String
+  email             String  @unique
+  password          String
+  credentialType    CredentialType  @default(JUNO)
+  being             Being @relation(fields: [beingId], references: [id])
+  beingId           Int
+}
+enum CredentialType {
+  JUNO
+  PARTNER
+  FRIEND
+}
+
+
+// PROJECTS AND IDEAS
+model Project {
+  id                Int @id @default(autoincrement())
+  name              String
+  abstract          String?
+  description       String
+  cover             String
+  state             ProjectState @default(COMING)
+  category          ProjectCategory @default(SOCIAL)
+  partners          Partner[]
+  storyContent      StoryContent @relation(fields: [storyContentId], references: [id])
+  storyContentId    Int
+}
+
+enum ProjectCategory {
+  ART
+  SCIENCE
+  TECHNOLOGY
+  SOCIAL
+}
+enum ProjectState {
+  ACCOMPLISHED
+  WORKING
+  COMING
+}
+
+model Idea {
+  id                      Int @id @default(autoincrement())
+  title                   String
+  abstract                String
+  introductoryQuestion    String
+  cover                   String
+  category                IdeaCategory @default(STATE)
+  storyContent            StoryContent @relation(fields: [storyContentId], references: [id])
+  storyContentId          Int
+}
+enum IdeaCategory {
+  ARTICLE
+  ESSAY
+  STATE
+}
+
+model StoryContent {
+  id                Int @id @default(autoincrement())
+  content           String
+  ideaId            Idea?
+  projectId         Project?
+}
+
+
+// SERVICES AND STUDIES
+model Service {
+  id                  Int @id @default(autoincrement())
+  name                String
+  description         String
+  whyNeeded           String?
+  whyJuno             String?
+  studies             Study[]
+  pilar               PILARS @default(TECHNOLOGY)
+}
+
+model Study {
+  id                  Int @id @default(autoincrement())
+  name                String
+  description         String
+  whyNeeded           String?
+  experience          String?
+  state               StudyState  @default(MASTERED)
+  services            Service[]
+  pilar               PILARS @default(TECHNOLOGY)
+}
+
+enum StudyState {
+  MASTERED
+  LEARNING
+}
