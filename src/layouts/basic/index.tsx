@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Header } from '../../containers/header'
+import { ContactContainer } from '../../containers/contact'
 
 export const BasicLayout:React.FC = ({ children }) => {
 
@@ -12,6 +13,9 @@ export const BasicLayout:React.FC = ({ children }) => {
                     children
                 }
             </section>
+            <ContactContainer 
+                color="primary"
+            />
         </section>
     )
 }

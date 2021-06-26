@@ -1,6 +1,6 @@
 import React from 'react'
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
-import { Being, PrismaClient } from '@prisma/client'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { Project, PrismaClient } from '@prisma/client'
 import { BasicLayout } from '../layouts/basic'
 
 import { HomeCelestialBodies } from '../tools/content/celestialBodies'
@@ -8,22 +8,29 @@ import { ideaCategories } from '../tools/content/state'
 
 import { Content } from '../components/content'
 import { IdeaCategoryCard } from '../components/ideas/categoryCard'
+import { ButtonLink } from '../components/buttons/link'
 
 import { ExploreContainer } from '../containers/explore'
 import { ServicesContainer } from '../containers/services'
 import { ProcessesContainer } from '../containers/processes'
 import { ContactContainer } from '../containers/contact'
+import { SpecialProjects } from '../containers/projects/special'
 
-export const getServerSideProps:GetServerSideProps<any> = async (context) =>  {
+interface PropsHome {
+    specialProjects: Project[]
+}
+
+export const getStaticProps:GetStaticProps<PropsHome> = async (context) =>  {
     const prisma = new PrismaClient()
+    const specialProjects = await prisma.project.findMany({ where: { category: 'ART', OR: { category: 'SCIENCE' }}, take: 10 })
     return {
         props: {
-            hello: 'there'
+            specialProjects
         }
     }
 } 
 
-const Home:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (props) => {    
+const Home:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ specialProjects }) => {    
 
 
     return (
@@ -63,19 +70,15 @@ const Home:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (p
             />
             
             
-            <section className="bg-secondary flex flex-col  home home__projects">
-                    <Content
-                        position="start"
-                        size="mid"
-                    >
-                        <h2 className="color-primary">Special Projects</h2>
-                        <p className="color-primary">The best ideas are created when we think about others. Social entrepreneurship is really special in this world and we needed more than ever in times like today. So please, if you can support them we'll be really grateful.</p>
-                    </Content>
+            {
+                specialProjects.length > 0 && (
+                    <SpecialProjects 
+                        specialProjects={specialProjects}
+                        color="primary"
+                    />
+                )
+            }                    
 
-                    <ul className="home__projects-list">
-                        
-                    </ul>
-            </section>
             <section className="bg-secondary flex flex-col  home home__state">
                     <Content
                         position="start"
@@ -96,11 +99,12 @@ const Home:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (p
                             {...ideaCategories['state']}
                         />
                     </ul>
+                    <ButtonLink 
+                        link="/ideas"
+                        title="See All"
+                        color="primary"
+                    />
             </section>
-
-            <ContactContainer 
-                color="primary"
-            />
         </BasicLayout>
     )
 }  

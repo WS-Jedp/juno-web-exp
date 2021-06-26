@@ -60,8 +60,8 @@ model Project {
   state             ProjectState @default(COMING)
   category          ProjectCategory @default(SOCIAL)
   partners          Partner[]
-  storyContent      StoryContent @relation(fields: [storyContentId], references: [id])
-  storyContentId    Int
+  storyContent      StoryContent? @relation(fields: [storyContentId], references: [id])
+  storyContentId    Int?
 }
 
 enum ProjectCategory {
@@ -83,8 +83,8 @@ model Idea {
   introductoryQuestion    String
   cover                   String
   category                IdeaCategory @default(STATE)
-  storyContent            StoryContent @relation(fields: [storyContentId], references: [id])
-  storyContentId          Int
+  storyContent            StoryContent? @relation(fields: [storyContentId], references: [id])
+  storyContentId          Int?
 }
 enum IdeaCategory {
   ARTICLE
