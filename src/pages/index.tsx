@@ -2,46 +2,28 @@ import React from 'react'
 import { BasicLayout } from '../layouts/basic'
 
 import { HomeCelestialBodies } from '../tools/content/celestialBodies'
-import { Processes } from '../tools/content/processes'
 import { ideaCategories } from '../tools/content/state'
 
-import { OrbitalWay } from '../components/orbitalWay'
 import { Content } from '../components/content'
-import { ButtonCircle } from '../components/buttons/circle'
-import { PilarCard } from '../components/pilars/card'
-import { ProcessCard } from '../components/process/card'
 import { IdeaCategoryCard } from '../components/ideas/categoryCard'
 
-
-
+import { ExploreContainer } from '../containers/explore'
+import { ServicesContainer } from '../containers/services'
+import { ProcessesContainer } from '../containers/processes'
+import { ContactContainer } from '../containers/contact'
 
 const Home:React.FC = () => {
 
     return (
         <BasicLayout>
-            <section className="home home__title">
-                <article className="home__title-text">
-                    <Content
-                        position="start"
-                    >
-                        <h1 className="color-secondary">One Person Creative Studio</h1>
-                        <p className="color-secondary">Let's bring your ideas into reality</p>
-                    </Content>
-                    <ButtonCircle 
-                        title="Explore"
-                        action={() => {}}
-                        color="primary"
-                    />
-                </article>
-
-                <article className="home__title-content">
-                   <OrbitalWay
-                        celestialBodies={HomeCelestialBodies}
-                        color="white"
-                   /> 
-                </article>
-            </section>
-            <section className="bg-secondary flex flex-col justify-between home home__purposes">
+            <ExploreContainer 
+                title="One Person Creative Studio"
+                description="Let's bring your ideas into reality"
+                content={HomeCelestialBodies}
+                onExplore={() => {}}
+            />
+            
+            <section id="purposes" className="bg-secondary flex flex-col justify-between home home__purposes">
                     <Content
                         position="end"
                         size="mid"
@@ -58,52 +40,17 @@ const Home:React.FC = () => {
                     </Content>
                     
             </section>
-            <section className="bg-secondary flex flex-col home home__services">
-                    <Content
-                        position="start"
-                        size="mid"
-                    >
-                        <h2 className="color-primary">Services</h2>
-                        <p className="color-primary">Know how we can bring your idea into reality.</p>
-                    </Content>                    
 
-                    <ul className="flex flex-row home__services-list">
-                        <PilarCard 
-                            index={1}
-                            link="/services/science"
-                            title="Science"
-                            color="purple"
-                        />
-                        <PilarCard 
-                            index={2}
-                            link="/services/art"
-                            title="Art"
-                            color="light-blue"
-                        />
-                        <PilarCard 
-                            index={3}
-                            link="/services/technology"
-                            title="Technology"
-                            color="main"
-                        />
-                    </ul>
-            </section>
-            <section className="bg-primary flex flex-col  home home__processes">
-                    <Content
-                        position="end"
-                        size="mid"
-                    >
-                        <h2 className="color-secondary">Processes</h2>
-                        <p className="color-secondary">Stories are the best ways to connect with people. Working with Juno is working through a story creation process, where each project is unique that will tell and express his vision of reality.</p>
-                    </Content>
+            <ServicesContainer 
+                position="start"
+                color="primary"
+            />
 
-                    <ul className="home__processes-list">
-                        <ProcessCard 
-                            {...Processes['storytelling']}
-                            color="white"
-                        />
-                    </ul>
-            </section>
+            <ProcessesContainer 
+                position="end"
+            />
+            
+            
             <section className="bg-secondary flex flex-col  home home__projects">
                     <Content
                         position="start"
@@ -138,6 +85,10 @@ const Home:React.FC = () => {
                         />
                     </ul>
             </section>
+
+            <ContactContainer 
+                color="primary"
+            />
         </BasicLayout>
     )
 }  

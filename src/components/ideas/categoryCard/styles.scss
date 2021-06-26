@@ -1,5 +1,6 @@
 
 .idea-category-card {
+    min-width: 210px;
     width: 81%;
     max-width: 330px;
     height: 120px;
@@ -38,6 +39,7 @@
     & p {
         color: var(--color-secondary);
         font-size: $text-size-base-md;
+        line-height: 21px;
         
         @include tablet {
             font-size: $text-size-base;

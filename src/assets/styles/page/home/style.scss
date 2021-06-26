@@ -3,85 +3,16 @@
     padding: $space-sm-lg;
 
     @include desktop-sm {
-        padding: 0 $space-lg-sm;
+        padding: $space-lg-sm;
     }
 
-    &__title {
-        position: relative;
-        width: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        height: 90vh;
-        align-items: center;
-        justify-content: space-between;
-    
-        &-text {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: flex-start;
-            justify-content: space-around;
-            width: 100%;
-            min-height: 100%;
-            height: auto;
-    
-            @include desktop-sm {
-                width: 70%;
-                height: 100%;
-            }
-        }
-    
-        &-content {
-            display: none;
-            align-items: center;
-            justify-content: flex-end;
-            width: 100%;
-            height: 100%;
-    
-            @include desktop-sm {
-                display: flex;
-                width: 30%;
-            }
-        }
-    }
 
     &__purposes {
         position: relative;
         width: 100%;
         height: 100vh;
     }
-
-    &__services {
-        position: relative;
-        width: 100%;
-        min-height: 60vh;
-        overflow: hidden;
-
-        @include desktop-sm {
-            height: 100vh;
-        }
-
-        &-list {
-            padding: $space-base-xl 0;
-            width: 100%;
-            overflow-x: scroll;
-        }
-    }
-
-    &__processes {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-
-        @include desktop-sm {
-            height: 100vh;
-        }
-
-        &-list {
-            padding: $space-sm-md 0;
-            width: 100%;
-            overflow-x: scroll;
-        }
-    }
+    
     &__projects {
         position: relative;
         width: 100%;
@@ -105,7 +36,7 @@
 
         @include desktop-sm {
             justify-content: space-between;
-            height: 72vh;
+            min-height: 72vh;
         }
 
         &-list {
