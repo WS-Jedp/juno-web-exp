@@ -1,6 +1,5 @@
 import React from 'react'
 import { PILLARS } from '../../../tools/types/pillars'
-import './styles.scss'
 import { definePilarColor } from '../../../tools/functions/definePilarColor'
 
 interface StudyCardProps {

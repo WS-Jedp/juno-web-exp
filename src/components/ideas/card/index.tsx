@@ -1,8 +1,7 @@
 import React from 'react'
-import './styles.scss'
 import { defineIdeaCategoryUrl } from '../../../tools/functions/defineIdeaCategoryUrl' 
 
-interface IdeaCardProps {
+export interface IdeaCardProps {
     category: string,
     title: string,
     abstract: string,

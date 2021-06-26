@@ -1,4 +1,3 @@
-@use '../../../assets/styles/partials' as *;
 
 .orbital-way-information {
     position: relative;
@@ -12,6 +11,10 @@
     cursor: pointer;
     background-color: none;
     @include transition(.6s);
+
+    & p {
+        line-height: 21px;
+    }
 
     @include tablet() {
         min-width: 180px;

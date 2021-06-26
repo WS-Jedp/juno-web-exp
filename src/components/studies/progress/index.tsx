@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion as m } from 'framer-motion'
-import './styles.scss'
 
 interface StudyProgressProps {
     junoPosition: number,

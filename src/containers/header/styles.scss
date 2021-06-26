@@ -1,12 +1,10 @@
-@use '../../assets/styles/partials' as *;
 
 .header {
-    position: relative;
+    position: sticky;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

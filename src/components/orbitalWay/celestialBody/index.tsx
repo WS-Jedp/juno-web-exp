@@ -2,7 +2,6 @@ import React from 'react'
 import { motion as m } from 'framer-motion'
 import { TransitionSlow } from '../../../assets/styles/animations/transitions'
 import { OrbitalWayInformation } from '../information'
-import './styles.scss'
 
 export interface CelestialBodyProps {
     title: string,

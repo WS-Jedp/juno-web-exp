@@ -1,7 +1,6 @@
 import React from 'react'
-import './styles.scss'
 
-interface IdeaCategoryCardProps {
+export interface IdeaCategoryCardProps {
     title: string,
     abstract: string,
     color?: 'purple' | 'main' | 'light-blue',

@@ -1,44 +1,41 @@
 @use './partials' as *;
 
-:root {
-    font-size: 62.5%;
-}
+@import '../../components/allies/card/styles.scss';
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+@import '../../components/buttons/circle/styles.scss';
+@import '../../components/buttons/link/styles.scss';
 
-h1 {
-    font-size: $title-size-sm;
-    font-family: 'TimesNewRomanBold';
-    font-style: normal;
-}
+@import '../../components/content/styles.scss';
 
-h2 {
-   font-size: $title-size-sm;
-   font-family: 'TimesNewRomanBold'; 
-}
+@import '../../components/ideas/card/styles.scss';
+@import '../../components/ideas/categoryCard/styles.scss';
 
-h3 {
-    font-size: $text-size-lg;
-    font-family: 'Noto Sans JP';
-}
+@import '../../components/location/card/styles.scss';
+@import '../../components/location/orbit/styles.scss';
 
-p, b, i {
-    font-size: $text-size-base;
-    font-weight: lighter;
-}
+@import '../../components/logos/Particle/styles.scss';
+@import '../../components/logos/StandardParticle/styles.scss';
+@import '../../components/logos/Waves/black/styles.scss';
 
-a {
-    color: var(--color-secondary);
-    font-family: 'TimesNewRomanBold';
-    font-size: $text-size-base-md;
-    text-decoration: none;
+@import '../../components/orbitalWay/styles.scss';
+@import '../../components/orbitalWay/celestialBody/styles.scss';
+@import '../../components/orbitalWay/information/styles.scss';
+@import '../../components/orbitalWay/standard/styles.scss';
 
-    &:hover {
-        text-decoration: underline;
-    }
-}
+@import '../../components/pilars/card/styles.scss';
+
+@import '../../components/process/card/styles.scss';
+@import '../../components/stories/card/styles.scss';
+@import '../../components/studies/card/styles.scss';
+@import '../../components/studies/progress/styles.scss';
+
+@import '../../containers/header/styles.scss';
+@import '../../containers/locations/styles.scss';
+@import '../../containers/explore/styles.scss';
+@import '../../containers/services/styles.scss';
+@import '../../containers/processes/styles.scss';
+@import '../../containers/contact/styles.scss';
+
+@import '../../layouts/basic/styles.scss';
+
+@import './page/home/style.scss';

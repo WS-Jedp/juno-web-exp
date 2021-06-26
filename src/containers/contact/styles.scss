@@ -1,0 +1,8 @@
+.contact-container {
+    padding: $space-sm-lg;
+    min-height: 100vh;
+
+    @include desktop-sm {
+        padding: $space-lg-sm;
+    }
+}

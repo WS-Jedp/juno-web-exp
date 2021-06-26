@@ -1,0 +1,58 @@
+.home {
+
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding: $space-lg-sm;
+    }
+
+
+    &__purposes {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    
+    &__projects {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        @include desktop-sm {
+            height: 100vh;
+        }
+
+        &-list {
+            padding: $space-sm-md 0;
+            width: 100%;
+            overflow-x: scroll;
+        }
+    }
+    
+    &__state {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        @include desktop-sm {
+            justify-content: space-between;
+            min-height: 72vh;
+        }
+
+        &-list {
+            padding: $space-sm-md 0;
+            width: 100%;
+            overflow-x: scroll;
+            & .idea-category-card {
+                &:hover {
+                    p {
+                        color: $color-light;
+                    }
+                }
+            }
+            & .idea-category-card p {
+                color: var(--color-primary);
+            }
+        }
+    }
+}

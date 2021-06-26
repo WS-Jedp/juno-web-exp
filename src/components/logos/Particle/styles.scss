@@ -1,15 +1,15 @@
-.cls-1, .svg-black {
+.p-cls-1, .p-svg-black {
     fill:var(--color-primary);
 }
-.cls-2, .svg-line-black {
+.p-cls-2, .p-svg-line-black {
     fill:none;
     stroke:var(--color-primary);
     stroke-miterlimit:10;
     stroke-width:2px;
 }
-.svg-white {
+.p-svg-white {
     fill:var(--color-secondary);
 }
-.svg-line-white {
+.p-svg-line-white {
     stroke:var(--color-secondary);   
 }

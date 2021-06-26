@@ -1,0 +1,57 @@
+@use './fonts' as *;
+@use './responsive' as *;
+
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1 {
+    font-size: $text-size-lg + $text-size-lg;
+    font-family: 'TimesNewRomanBold';
+    font-style: normal;
+    @include desktop-sm {
+        font-size: $title-size-sm;
+    }
+}
+
+h2 {
+   font-size: $text-size-md + $text-size-md;
+   font-family: 'TimesNewRomanBold'; 
+   @include desktop-sm {
+       font-size: $title-size-sm;
+   }
+}
+
+h3 {
+    font-size: $text-size-lg;
+    font-family: 'Noto Sans JP';
+}
+
+p, b, i {
+    font-family: $font-sans;
+    font-size: $text-size-base;
+    font-weight: lighter;
+    line-height: 33px;
+
+    @include desktop-sm {
+        font-size: $text-size-base;
+    }
+}
+
+a {
+    color: var(--color-secondary);
+    font-family: 'TimesNewRomanBold';
+    font-size: $text-size-base-md;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

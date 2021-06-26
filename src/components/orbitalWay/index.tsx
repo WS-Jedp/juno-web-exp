@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion as m } from 'framer-motion'
 import { CelestialBodyFromOrbitalWay, CelestialBodyProps } from './celestialBody'
-import './styles.scss'
 
 interface OrbitalWayProps {
     celestialBodies: CelestialBodyProps[],
