@@ -1,4 +1,6 @@
 import React from 'react'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { Being, PrismaClient } from '@prisma/client'
 import { BasicLayout } from '../layouts/basic'
 
 import { HomeCelestialBodies } from '../tools/content/celestialBodies'
@@ -12,7 +14,17 @@ import { ServicesContainer } from '../containers/services'
 import { ProcessesContainer } from '../containers/processes'
 import { ContactContainer } from '../containers/contact'
 
-const Home:React.FC = () => {
+export const getServerSideProps:GetServerSideProps<any> = async (context) =>  {
+    const prisma = new PrismaClient()
+    return {
+        props: {
+            hello: 'there'
+        }
+    }
+} 
+
+const Home:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = (props) => {    
+
 
     return (
         <BasicLayout>
