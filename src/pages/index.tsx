@@ -1,6 +1,6 @@
 import React from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Project, PrismaClient } from '@prisma/client'
+import { Project, PrismaClient, Partner } from '@prisma/client'
 import { BasicLayout } from '../layouts/basic'
 
 import { HomeCelestialBodies } from '../tools/content/celestialBodies'
@@ -13,19 +13,21 @@ import { ButtonLink } from '../components/buttons/link'
 import { ExploreContainer } from '../containers/explore'
 import { ServicesContainer } from '../containers/services'
 import { ProcessesContainer } from '../containers/processes'
-import { ContactContainer } from '../containers/contact'
+import { PartnersContainer } from '../containers/partners'
 import { SpecialProjects } from '../containers/projects/special'
 
 interface PropsHome {
-    specialProjects: Project[]
+    specialProjects: Project[],
 }
 
 export const getStaticProps:GetStaticProps<PropsHome> = async (context) =>  {
     const prisma = new PrismaClient()
     const specialProjects = await prisma.project.findMany({ where: { category: 'ART', OR: { category: 'SCIENCE' }}, take: 10 })
+
+
     return {
         props: {
-            specialProjects
+            specialProjects,
         }
     }
 } 
@@ -77,7 +79,7 @@ const Home:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ special
                         color="primary"
                     />
                 )
-            }                    
+            }
 
             <section className="bg-secondary flex flex-col  home home__state">
                     <Content

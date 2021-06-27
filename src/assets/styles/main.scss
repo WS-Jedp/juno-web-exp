@@ -29,6 +29,8 @@
 @import '../../components/studies/card/styles.scss';
 @import '../../components/studies/progress/styles.scss';
 
+@import '../../components/commons/footer/styles.scss';
+
 @import '../../containers/header/styles.scss';
 @import '../../containers/locations/styles.scss';
 @import '../../containers/explore/styles.scss';
@@ -39,6 +41,11 @@
 @import '../../containers/projects/special/styles.scss';
 @import '../../containers/projects/last/styles.scss';
 
+@import '../../containers/partners/styles.scss';
+
+@import '../../containers/ideas/related/styles.scss';
+
 @import '../../layouts/basic/styles.scss';
+@import '../../layouts/story/styles.scss';
 
 @import './page/home/style.scss';

@@ -3,7 +3,11 @@ import React from 'react'
 import { Header } from '../../containers/header'
 import { ContactContainer } from '../../containers/contact'
 
-export const BasicLayout:React.FC = ({ children }) => {
+interface BasicLayout {
+    color?: 'primary' | 'secondary'
+}
+
+export const BasicLayout:React.FC<BasicLayout> = ({ children, color = 'primary' }) => {
 
     return (
         <section className="bg-primary basic-layout">
@@ -14,7 +18,7 @@ export const BasicLayout:React.FC = ({ children }) => {
                 }
             </section>
             <ContactContainer 
-                color="primary"
+                color={color === 'primary' ? 'secondary' : 'primary'}
             />
         </section>
     )

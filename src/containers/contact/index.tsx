@@ -24,7 +24,7 @@ export const ContactContainer:React.FC<ContactContainer> = ({ color = 'primary' 
             <ButtonLink 
                 link="/"
                 title="me@juno.com"
-                color="secondary"
+                color={color === 'primary' ? 'secondary' : 'primary'}
             />
         </section>
     )
