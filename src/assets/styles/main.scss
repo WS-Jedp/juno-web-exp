@@ -40,12 +40,20 @@
 
 @import '../../containers/projects/special/styles.scss';
 @import '../../containers/projects/last/styles.scss';
+@import '../../containers/projects/all/styles.scss';
 
 @import '../../containers/partners/styles.scss';
 
 @import '../../containers/ideas/related/styles.scss';
 
+@import '../../containers/studies/knowledges/styles.scss';
+@import '../../containers/studies/current/styles.scss';
+
 @import '../../layouts/basic/styles.scss';
 @import '../../layouts/story/styles.scss';
 
 @import './page/home/style.scss';
+@import './page/ideas/story/styles.scss';
+@import './page/about/styles.scss';
+@import './page/projects/styles.scss';
+@import './page/manifest/styles.scss';

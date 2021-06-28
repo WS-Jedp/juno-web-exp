@@ -6,32 +6,38 @@ interface StudyCardProps {
     pilar: PILLARS,
     title: string,
     description: string,
-    purposes: string[]
+    purposes: string[],
+    color?: 'primary' | 'secondary'
 }
 
-export const StudyCard:React.FC<StudyCardProps> = ({ pilar, title, description, purposes }) => {
+export const StudyCard:React.FC<StudyCardProps> = ({ pilar, title, description, purposes, color = 'primary' }) => {
 
     return (
-        <article className="relative flex flex-col justify-start m-xl study-card">
+        <article className={`relative flex flex-col justify-start m-xl study-card study-card--color-${color}`}>
             <h1 className={`font-sans ${definePilarColor({pilar})}`}>{pilar}</h1>
-            <h2 className="font-sans color-secondary">{title}</h2>
-            <p className="font-sans color-secondary">{description}</p>
+            <h2 className={`font-sans color-${color}`}>{title}</h2>
+            <p className={`font-sans color-${color}`}>{description}</p>
 
-            <div className="study-card__purposes">
-                <h3 className="font-sans color-secondary">Related Services</h3>
-                <ul className="flex flex-col color-secondary">
-                    {
-                        purposes.map((purpose, i) => (
-                            <a key={i}>
-                                <li className="flex flex-row align-center justify-start font-sans color-secondary">
-                                    <div className="study-card__purposes-purpose"/>
-                                    {purpose}
-                                </li>
-                            </a>
-                        ))
-                    }
-                </ul>
-            </div>
+
+            {
+                purposes.length > 0 && (
+                    <div className="study-card__purposes">
+                        <h3 className={`font-sans color-${color}`}>Related Services</h3>
+                        <ul className="flex flex-col color-primary">
+                            {
+                                purposes.map((purpose, i) => (
+                                    <a key={i}>
+                                        <li className={`flex flex-row align-center justify-start font-sans color-${color}`}>
+                                            <div className="study-card__purposes-purpose"/>
+                                            {purpose}
+                                        </li>
+                                    </a>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                )
+            }
 
         </article>
     )

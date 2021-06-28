@@ -14,9 +14,9 @@ interface LayoutStory {
 export const LayoutStory:React.FC<LayoutStory> = ({ children, color = 'primary', storyType = 'STORY' }) => {
 
     return (
-        <section className="bg-primary story-layout">
+        <section className="bg-secondary story-layout">
             <Header color={color} />
-            <section className="bg-primary story-layout__content">
+            <section className="bg-secondary story-layout__content">
                 {
                     children
                 }

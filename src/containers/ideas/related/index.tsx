@@ -15,8 +15,8 @@ interface RelatedIdeasContainer {
 export const RelatedIdeasContainer:React.FC<RelatedIdeasContainer> = ({ color = 'primary', ideaType, relatedIdeas = [] }) => {
 
     return (
-        <article className="related-ideas">
-            <h2>Related {defineStoryTypeTitle(ideaType)}</h2>
+        <article className={`bg-${color} related-ideas`}>
+            <h2 className={`color-${color === 'primary' ? 'secondary' : 'primary'}`}>Related {defineStoryTypeTitle(ideaType)}</h2>
             <ul className="flex flex-flow related-ideas__list">
                 {
                     relatedIdeas.map(idea => (

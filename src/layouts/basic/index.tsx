@@ -18,7 +18,7 @@ export const BasicLayout:React.FC<BasicLayout> = ({ children, color = 'primary' 
                 }
             </section>
             <ContactContainer 
-                color={color === 'primary' ? 'secondary' : 'primary'}
+                color={color}
             />
         </section>
     )

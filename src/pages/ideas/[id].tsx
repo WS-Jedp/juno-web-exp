@@ -1,38 +1,35 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
+import gfm from 'remark-gfm'
 import { Idea, StoryContent, PrismaClient } from '@prisma/client'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+
+import { defineCategoryColor } from '../../tools/functions/defineCategoryColor'
 
 import { LayoutStory } from '../../layouts/story'
 
 import { RelatedIdeasContainer } from '../../containers/ideas/related'
+
+interface IdeaProp extends Omit<Idea, 'createdAt'> {
+    createdAt: string,
+}
+
 interface PropsStory {
-    idea: (Idea & {storyContent: StoryContent | null}) | null
-    relatedIdeas: Idea[]
+    idea: (IdeaProp & {storyContent: StoryContent | null}) | null
+    relatedIdeas: Idea[],
 }
 
 export const getServerSideProps:GetServerSideProps<PropsStory> = async (context) => {
 
     const prisma = new PrismaClient()
-    // const idea = await prisma.idea.findUnique({ where: { id: Number(context.query.id) }, include: { storyContent: true } })
-    // const relatedIdeas = await prisma.idea.findMany({ where: { category: idea?.category, NOT: { id: idea?.id } }, take: 5 })
+    const idea = await prisma.idea.findUnique({ where: { id: Number(context.query.id) }, include: { storyContent: true } })
+    const relatedIdeas = await prisma.idea.findMany({ where: { category: idea?.category, NOT: { id: idea?.id } }, take: 5 })
+
 
     return {
         props: {
-            idea: {
-                id: 1, 
-                abstract: 'Just a little abstract to see', 
-                category: 'ARTICLE', 
-                cover: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/de/RWS_Tarot_01_Magician.jpg/320px-RWS_Tarot_01_Magician.jpg', 
-                createdAt: new Date(), 
-                introductoryQuestion: 'There is something more?', 
-                storyContentId: 1, title: 'Test Idea', 
-                updatedAt: null,
-                storyContent: {
-                    content: 'Welcome',
-                    id: 1
-                } 
-            },
-            relatedIdeas: []
+            idea: idea ? { ...idea, createdAt: idea?.createdAt.toString() } : null,
+            relatedIdeas: relatedIdeas
         }
     }
 
@@ -40,9 +37,15 @@ export const getServerSideProps:GetServerSideProps<PropsStory> = async (context)
 
 const ProjectStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ idea, relatedIdeas }) => {
 
-    if(!idea) {
+    if(!idea || !idea.storyContent) {
         return (
-            <h1>Not Found!</h1>
+            <LayoutStory>
+                <section className="flex flex-row align-center justify-center idea-story idea-story__not-found">
+                    <h3 className="text-center">
+                        Sorry, we can't find that Idea
+                    </h3>
+                </section>
+            </LayoutStory>
         )
     }
 
@@ -52,20 +55,35 @@ const ProjectStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProp
                 <img title={idea.title} alt={idea.title} src={idea.cover} />
             </figure>
             <section className="idea-story idea-story__header">
-                <a>Go Back</a>
-                <b>{idea.category.toLowerCase()}</b>
-                <h1>{idea.title}</h1>
+                <a className="color-primary">Go Back</a>
+                <h3 className={defineCategoryColor({ category: idea.category.toLowerCase() })}>{idea.category.toLowerCase()}</h3>
+                <h1 className="color-primary">{idea.title}</h1>
+                <p className="color-primary">
+                    {
+                        idea.introductoryQuestion
+                    }
+                </p>
+                <p className="color-primary">
+                    {
+                        idea.abstract
+                    }
+                </p>
             </section>
             <section className="idea-story idea-story__content">
-                {
-                    idea.storyContent?.content
-                }
+                <ReactMarkdown
+                    plugins={[gfm]}
+                    children={idea.storyContent.content}
+                />
             </section>
-            <RelatedIdeasContainer 
-                relatedIdeas={relatedIdeas}
-                ideaType={idea.category}
-                color="secondary"
-            />
+            {
+                relatedIdeas.length > 0 && (
+                    <RelatedIdeasContainer 
+                        relatedIdeas={relatedIdeas}
+                        ideaType={idea.category}
+                        color="secondary"
+                    />
+                )
+            }
         </LayoutStory>
     )
 }
