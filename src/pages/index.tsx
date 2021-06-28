@@ -13,17 +13,19 @@ import { ButtonLink } from '../components/buttons/link'
 import { ExploreContainer } from '../containers/explore'
 import { ServicesContainer } from '../containers/services'
 import { ProcessesContainer } from '../containers/processes'
-import { PartnersContainer } from '../containers/partners'
 import { SpecialProjects } from '../containers/projects/special'
+
+import { createJunoUser } from '../tools/scripts/user'
 
 interface PropsHome {
     specialProjects: Project[],
 }
 
 export const getStaticProps:GetStaticProps<PropsHome> = async (context) =>  {
+    
     const prisma = new PrismaClient()
     const specialProjects = await prisma.project.findMany({ where: { category: 'ART', OR: { category: 'SCIENCE' }}, take: 10 })
-
+    createJunoUser()
 
     return {
         props: {
@@ -33,7 +35,6 @@ export const getStaticProps:GetStaticProps<PropsHome> = async (context) =>  {
 } 
 
 const Home:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ specialProjects }) => {    
-
 
     return (
         <BasicLayout>
