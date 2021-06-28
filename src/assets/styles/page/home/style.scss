@@ -13,22 +13,6 @@
         height: 100vh;
     }
     
-    &__projects {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-
-        @include desktop-sm {
-            height: 100vh;
-        }
-
-        &-list {
-            padding: $space-sm-md 0;
-            width: 100%;
-            overflow-x: scroll;
-        }
-    }
-    
     &__state {
         position: relative;
         width: 100%;

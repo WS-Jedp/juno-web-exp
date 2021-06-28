@@ -11,10 +11,10 @@
     &__body {
         width: 18px;
         height: 3px;
-        background-color: var(--color-secondary);
         cursor: pointer;
         @include shadow(var(--color-secondary), 0, 0, 0, 0, .0);
         @include transition(.6s);
+
     }
     &:hover &__body {
         animation: lineIntoBody .6s ease-in-out both;

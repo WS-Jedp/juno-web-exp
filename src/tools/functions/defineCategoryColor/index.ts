@@ -8,6 +8,6 @@ const CATEGORY_COLORS:CategoryColors = {
     'research': 'color-purple'
 }
 
-const DEFAULT_CATEGORY_COLOR = 'color-secondary'
+const DEFAULT_CATEGORY_COLOR = 'color-main'
 
 export const defineCategoryColor = ({category}:{category:string}):string => CATEGORY_COLORS[category.toLowerCase()] || DEFAULT_CATEGORY_COLOR

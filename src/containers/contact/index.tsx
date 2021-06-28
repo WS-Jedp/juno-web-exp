@@ -12,7 +12,7 @@ interface ContactContainer {
 export const ContactContainer:React.FC<ContactContainer> = ({ color = 'primary' }) => {
 
     return (
-        <section className={`flex flex-col align-start justify-between bg-${color === 'primary' ? 'pirmary' : 'secondary'} contact-container`}>
+        <section className={`flex flex-col align-start justify-between bg-${color === 'primary' ? 'primary' : 'secondary'} contact-container`}>
             <Content
                 color={color === 'primary' ? 'white' : 'black'}
                 size="mid"
@@ -24,7 +24,7 @@ export const ContactContainer:React.FC<ContactContainer> = ({ color = 'primary' 
             <ButtonLink 
                 link="/"
                 title="me@juno.com"
-                color="secondary"
+                color={color === 'primary' ? 'secondary' : 'primary'}
             />
         </section>
     )

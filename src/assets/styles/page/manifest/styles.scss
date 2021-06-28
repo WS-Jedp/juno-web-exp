@@ -1,0 +1,23 @@
+.manifest {
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding: $space-lg-sm;
+    }
+
+    &-content {
+        width: 96%;
+        background-color: #F9F9F9;
+        padding: $space-sm-sm;
+        @include shadow($color-purple, 0, 0, .3rem, .6rem, .1);
+
+        @include tablet {
+            width: 72%;
+        }
+        
+        @include desktop-sm {
+            padding: $space-lg-sm;
+            width: 60%;
+        }
+    }
+}

@@ -20,18 +20,31 @@ enum PILARS {
 model Being {
   id                Int @id @default(autoincrement())
   name              String
-  last_name         String
+  lastName          String
   credentialsId     Credential?
   partnerId         Partner?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime?
 }
 
 model Partner {
   id                Int @id @default(autoincrement())
+  name              String
   description       String?
-  shortDescription  String
+  abstract          String
   being             Being @relation(fields: [beingId], references: [id])
   projects          Project[]
+  partnerCategory   PartnerCategory @default(SOCIAL)
   beingId           Int
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime?
+}
+enum PartnerCategory {
+  AGENCY
+  SOCIAL
+  RESEARCH
+  FREELANCE
+  COMPANY
 }
 
 model Credential {
@@ -45,8 +58,8 @@ model Credential {
 }
 enum CredentialType {
   JUNO
+  ALLY
   PARTNER
-  FRIEND
 }
 
 
@@ -57,11 +70,14 @@ model Project {
   abstract          String?
   description       String
   cover             String
-  state             ProjectState @default(COMING)
+  state             ProjectState @default(COMING_SOON)
   category          ProjectCategory @default(SOCIAL)
   partners          Partner[]
-  storyContent      StoryContent @relation(fields: [storyContentId], references: [id])
-  storyContentId    Int
+  storyContent      StoryContent? @relation(fields: [storyContentId], references: [id])
+  storyContentId    Int?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime?
+  finishedAt        DateTime?
 }
 
 enum ProjectCategory {
@@ -72,8 +88,7 @@ enum ProjectCategory {
 }
 enum ProjectState {
   ACCOMPLISHED
-  WORKING
-  COMING
+  COMING_SOON
 }
 
 model Idea {
@@ -83,8 +98,10 @@ model Idea {
   introductoryQuestion    String
   cover                   String
   category                IdeaCategory @default(STATE)
-  storyContent            StoryContent @relation(fields: [storyContentId], references: [id])
-  storyContentId          Int
+  storyContent            StoryContent? @relation(fields: [storyContentId], references: [id])
+  storyContentId          Int?
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime?
 }
 enum IdeaCategory {
   ARTICLE
@@ -109,6 +126,8 @@ model Service {
   whyJuno             String?
   studies             Study[]
   pilar               PILARS @default(TECHNOLOGY)
+  offeredSince        DateTime @default(now())
+  updatedAt           DateTime?
 }
 
 model Study {
@@ -120,9 +139,19 @@ model Study {
   state               StudyState  @default(MASTERED)
   services            Service[]
   pilar               PILARS @default(TECHNOLOGY)
+  startedAt           DateTime @default(now())
+  masteredAt          DateTime?
+  currentStudy        CurrentStudy?
 }
 
 enum StudyState {
   MASTERED
   LEARNING
+}
+
+model CurrentStudy {
+  id                Int @id @default(autoincrement())
+  study             Study @relation(fields: [studyId], references: [id])
+  studyId           Int
+  progress          Int @default(50)
 }

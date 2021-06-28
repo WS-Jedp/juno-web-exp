@@ -1,7 +1,7 @@
 import React from 'react'
 import { Content } from '../../content'
 
-interface PilarCardProps {
+export interface PilarCardProps {
     index: number,
     title: string,
     description?: string,

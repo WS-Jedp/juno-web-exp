@@ -1,0 +1,7 @@
+.projects {
+    padding: $space-sm-lg;
+    
+    @include desktop-sm {
+        padding: $space-lg-sm;
+    }
+}

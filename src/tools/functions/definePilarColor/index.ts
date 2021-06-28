@@ -16,4 +16,4 @@ const PILAR_COLORS:PillarColors = {
 
 const DEFAULT_PILAR_COLOR = 'color-purple'
 
-export const definePilarColor = ({ pilar }:DefinePilarColor):string => PILAR_COLORS[pilar] || DEFAULT_PILAR_COLOR
+export const definePilarColor = ({ pilar }:DefinePilarColor):string => PILAR_COLORS[pilar.toLowerCase()] || DEFAULT_PILAR_COLOR

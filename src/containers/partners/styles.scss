@@ -1,0 +1,28 @@
+.partners-container {
+    position: relative;
+    width: 100%;
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding: 0 $space-lg-sm;
+    }
+
+    &__list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 150px);
+        grid-auto-flow: row;
+        grid-gap: $space-sm-sm;
+        padding: $space-sm-sm 0;
+        justify-items: flex-start;
+
+        @include tablet {
+            grid-template-columns: repeat(auto-fill, 300px);
+            justify-items: center;
+        }
+
+        @include desktop-sm {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

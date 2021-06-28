@@ -27,7 +27,7 @@ export const ExploreContainer:React.FC<ExploreContainer> = ({ title, content, de
                 <ButtonCircle 
                     title="Explore"
                     action={onExplore}
-                    color={`${color === 'primary' ? 'primary' : 'secondary'}`}
+                    color={color}
                 />
             </article>
 

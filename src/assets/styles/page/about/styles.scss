@@ -1,0 +1,24 @@
+.about {
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding: $space-lg-sm;
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: column;
+        height: 100vh;
+        justify-content: space-between;
+
+        &-why {
+            flex-flow: column;
+            width: 100%;
+
+            @include desktop-sm {
+                flex-flow: row nowrap;
+                width: 60%;
+            }
+        }
+    }
+}

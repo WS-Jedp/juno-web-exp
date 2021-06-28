@@ -1,0 +1,28 @@
+.small-basic-layout {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+
+    &__header {
+        min-height: 40vh;
+        padding: $space-sm-lg;
+
+        @include desktop-sm {
+            padding: $space-sm-sm $space-lg-sm;
+        }
+    }
+
+    &__go-back {
+        font-size: $text-size-base;
+    }
+
+    &__content {
+        width: 100%;
+        height: auto;
+
+        @include tablet {
+            margin: auto;
+        }
+    }
+}

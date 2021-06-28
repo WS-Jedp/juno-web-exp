@@ -1,0 +1,20 @@
+.related-ideas {
+    width: 100%;
+    height: auto;
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding:  $space-lg-sm;
+    }
+
+    &-list {
+        position: relative;
+        width: 100%;
+        overflow-x: scroll;
+        
+        & li {
+            width: auto;
+            height: auto;
+        }
+    }
+}

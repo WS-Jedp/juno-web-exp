@@ -1,0 +1,23 @@
+.current-study-container {
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding: $space-lg-sm;
+    }
+
+    &__current {
+        display: flex;
+        flex-flow: column;
+        padding: $space-sm-sm 0;
+
+        @include desktop-sm {
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-around;
+
+            &--card, &--progress {
+                width: 50%;
+            }
+        }
+    }
+}

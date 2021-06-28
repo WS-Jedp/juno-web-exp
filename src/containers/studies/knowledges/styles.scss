@@ -1,0 +1,13 @@
+.knowledges-container {
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding: $space-lg-sm;
+    }
+
+    &__knowledges {
+        padding: $space-base-xl 0;
+        width: 100%;
+        overflow-x: scroll;
+    }
+}
