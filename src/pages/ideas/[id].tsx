@@ -35,7 +35,7 @@ export const getServerSideProps:GetServerSideProps<PropsStory> = async (context)
 
 }
 
-const ProjectStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ idea, relatedIdeas }) => {
+const IdeaStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ idea, relatedIdeas }) => {
 
     if(!idea || !idea.storyContent) {
         return (
@@ -88,4 +88,4 @@ const ProjectStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProp
     )
 }
 
-export default ProjectStory
+export default IdeaStory

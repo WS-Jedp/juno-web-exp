@@ -2,6 +2,8 @@ import React from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Project, PrismaClient, Partner } from '@prisma/client'
 
+import { StudioCelestialBodies } from '../../tools/content/celestialBodies'
+
 import { BasicLayout } from '../../layouts/basic'
 
 import { ExploreContainer } from '../../containers/explore'
@@ -39,7 +41,7 @@ const Studio:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ lastP
                 description="Find out all the services that can help you to make your idea reality. Also find out all the projects and ideas that Juno and his allies have been working on"
                 onExplore={() => {}}
                 color="secondary"
-                content={[]}
+                content={StudioCelestialBodies}
 
             />
             <ServicesContainer 

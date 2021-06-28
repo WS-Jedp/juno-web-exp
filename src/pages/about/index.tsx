@@ -2,6 +2,8 @@ import React from 'react'
 import { Project, PrismaClient } from '@prisma/client'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 
+import { AboutCelestialBodies } from '../../tools/content/celestialBodies'
+
 import { BasicLayout } from '../../layouts/basic'
 import { Content } from '../../components/content'
 
@@ -38,7 +40,7 @@ const About:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ person
             <ExploreContainer 
                 title="Willing To Dream"
                 description="Juno is an One Person Creative Studio based in Medellín, Colombia that helps you to convert your ideas into meaningful projects that impact the life of people, generating changes in our society and keep moving forward the humankind."
-                content={[]}
+                content={AboutCelestialBodies}
                 color="primary"
                 onExplore={() => {}}
             />
