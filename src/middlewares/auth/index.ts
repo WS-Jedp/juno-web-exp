@@ -1,7 +1,6 @@
 import nextConnect from 'next-connect'
 import session from '../../lib/auth/session'
 import passport from '../../lib/auth/passport'
-import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 import Dotenv from 'dotenv'
 
 Dotenv.config()

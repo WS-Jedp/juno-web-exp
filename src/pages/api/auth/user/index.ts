@@ -1,4 +1,4 @@
-import { NextApiHandler, NextApiRequest, NextApiResponse, PageConfig } from 'next'
+import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 
 import nextConnect from 'next-connect'
 import auth from '../../../../middlewares/auth'
@@ -11,8 +11,9 @@ const app = nextConnect()
 
 app.use(auth).get((req:RequestWithUser, res:NextApiResponse) => {
 
-    const user = {...req.user, password: undefined} 
+    const user = {...req.user, password: undefined}
     res.json({
+        
         status: 200,
         user
     })

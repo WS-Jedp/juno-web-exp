@@ -25,7 +25,6 @@ export const getServerSideProps:GetServerSideProps<PropsStory> = async (context)
     const idea = await prisma.idea.findUnique({ where: { id: Number(context.query.id) }, include: { storyContent: true } })
     const relatedIdeas = await prisma.idea.findMany({ where: { category: idea?.category, NOT: { id: idea?.id } }, take: 5 })
 
-
     return {
         props: {
             idea: idea ? { ...idea, createdAt: idea?.createdAt.toString() } : null,
