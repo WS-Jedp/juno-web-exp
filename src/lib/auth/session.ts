@@ -14,7 +14,7 @@ export interface RequestWithSession extends NextApiRequest{
 
 function parseCookies(req:NextApiRequest) {
     if(req.cookies) return req.cookies
-
+    
     const cookie = req.headers?.cookie
     return parse(cookie || '')
 }
@@ -22,11 +22,11 @@ function parseCookies(req:NextApiRequest) {
 type Session = {
     name: string,
     secret: string,
-    cookie: NextApiRequestCookies
+    cookie: CookiesSession
 }
 
 export default function session({name, secret, cookie: cookieOpts}:Session) {
-    return async (req:RequestWithSession, res: NextApiResponse, next: NextApiHandler) => {
+    return async (req:RequestWithSession, res: NextApiResponse, next:any) => {
         const cookies = parseCookies(req)
         const token = cookies[name]
         let unsealed = {}
@@ -35,18 +35,16 @@ export default function session({name, secret, cookie: cookieOpts}:Session) {
             try {
                 unsealed = await getLoginSession(token, secret)
             } catch(error) {
-                console.log(error)
+                throw new Error('Invalid token!')
             }
         }
 
         req.session = unsealed
-
+        
         const oldEnd = res.end
         res.end = async function resEndProxy(...args:any) { 
 
-            if(res.finished || res.writableEnded || res.headersSent) {
-                return
-            }
+            if(res.finished || res.writableEnded || res.headersSent) return
             if(cookieOpts.maxAge) {
                 req.session.maxAge = cookieOpts.maxAge
             }
@@ -56,7 +54,8 @@ export default function session({name, secret, cookie: cookieOpts}:Session) {
             res.setHeader('Set-Cookie', serialize(name, token, cookieOpts))
             oldEnd.apply(this, args)
         }
-        await next(req, res)
+
+        next()
 
     }
 }

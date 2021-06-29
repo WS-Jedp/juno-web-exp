@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client'
 import Crypto from 'crypto-js'
 
-const { CREDENTIAL_JUNO_USERNAME = '', CREDENTIAL_JUNO_EMAIL = '', CREDENTIAL_JUNO_TYPE = '', CREDENTIAL_JUNO_PASSWORD = '', BEING_JUNO_NAME = '', BEING_JUNO_LAST_NAME = '', JUNO_PASWORD_SECRETS = 'secret-passwords'} = process.env 
+const { CREDENTIAL_JUNO_USERNAME = '', CREDENTIAL_JUNO_EMAIL = '', CREDENTIAL_JUNO_TYPE = '', CREDENTIAL_JUNO_PASSWORD = 'example-password', BEING_JUNO_NAME = '', BEING_JUNO_LAST_NAME = '', JUNO_PASWORDS_SECRET = 'secret-passwords'} = process.env 
 
 const JUNO = {
     name: BEING_JUNO_NAME,
@@ -26,7 +26,7 @@ export const createJunoUser = async () => {
                 create: {
                     username: CREDENTIAL_JUNO_USERNAME,
                     email: CREDENTIAL_JUNO_EMAIL,
-                    password: Crypto.AES.encrypt(CREDENTIAL_JUNO_PASSWORD, JUNO_PASWORD_SECRETS).toString(),
+                    password: Crypto.AES.encrypt(CREDENTIAL_JUNO_PASSWORD, JUNO_PASWORDS_SECRET).toString(),
                     credentialType: 'JUNO'
                 }
             }

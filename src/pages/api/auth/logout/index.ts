@@ -2,17 +2,18 @@ import { NextApiRequest, NextApiResponse, PageConfig } from 'next'
 
 import nextConnect from 'next-connect'
 import auth from '../../../../middlewares/auth'
-import passport from '../../../../lib/auth/passport'
 
 interface RequestWithUser extends NextApiRequest {
-    user: {[key:string]: string}
+    user: {[key:string]: string},
+    logOut: () => void
 }
 
 const app = nextConnect()
 
 
-app.use(auth).post('/api/auth/login', passport.authenticate('local'), (req:RequestWithUser, res:NextApiResponse) => {
-    res.json(req.user)
+app.use(auth).post('/api/auth/logout', (req:RequestWithUser, res:NextApiResponse) => {
+    req.logOut()
+    res.status(204).json({logout: true})
 })
 
 export default app
