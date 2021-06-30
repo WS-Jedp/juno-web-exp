@@ -22,7 +22,7 @@ export const ContactContainer:React.FC<ContactContainer> = ({ color = 'primary' 
                 <p className={color === 'primary' ? 'color-secondary' : 'color-primary'}>Juno works as freelance, it doesn’t matter if you are a company, startup or just a person with ideas in your mind, let’s talk and find the best way to make your ideas and dreams come true.</p>
             </Content>
             <ButtonLink 
-                link="/"
+                link="mailto:jedp082@gmail.com"
                 title="me@juno.com"
                 color={color === 'primary' ? 'secondary' : 'primary'}
             />

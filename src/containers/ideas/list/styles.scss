@@ -1,0 +1,47 @@
+.ideas-container {
+    width: 100%;
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding: $space-lg-sm;
+    }
+
+    &__ideas {
+        position: relative;
+        width: 100%;
+        padding: $space-sm-lg;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+        overflow-x: initial;
+
+        & .button-link {
+            margin: $space-base-xl 0;
+
+            @include desktop-sm {
+                position: sticky;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        @include desktop-sm {
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: $space-lg-sm;
+            overflow-x: scroll;
+
+        }
+
+        &-list {
+            position: relative;
+            width: 100%;
+            overflow-x: scroll;
+            @include desktop-sm {
+                overflow-x: initial;
+                width: 60%;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@use './spaces' as *;
+@use './fonts' as *;
+@use './colors' as *;
+@use './shadows' as *;
+
+.form-input {
+    display: flex;
+    flex-flow: column nowrap;
+
+    &__label {
+        padding: $space-base-md 0;
+        font-size: $text-size-base-md;
+        font-family: $font-sans;
+    }
+
+    &__button {
+        width: 120px;
+        padding: $space-base-lg 0;
+        margin: $space-base-lg 0;
+        border: none;
+        background-color: $color-main;
+        color: $color-light;
+        font-weight: 700;
+        font-size: $text-size-base-md;
+        cursor: pointer;
+        @include shadow(var(--color-primary-rgb), 0, 0, .3rem, .6rem, .1);
+    }
+}
+
+input[type="text"], input[type="password"], input[type="email"], textarea, input[type="date"], input[type="time"] {
+    padding: $space-base-lg;
+    @include shadow($color-main, 0, 0, .1rem, .3rem, .3);
+    border: none;
+    font-family: $font-sans;
+
+    &:focus {
+        outline: 2px solid $color-main;
+        @include shadow($color-main, 0, 0, .3rem, .6rem, .1);
+    }
+}

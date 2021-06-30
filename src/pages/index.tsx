@@ -1,6 +1,7 @@
 import React from 'react'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Project, PrismaClient, Partner } from '@prisma/client'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useRouter } from 'next/router'
 import { BasicLayout } from '../layouts/basic'
 
 import { HomeCelestialBodies } from '../tools/content/celestialBodies'
@@ -36,13 +37,15 @@ export const getStaticProps:GetStaticProps<PropsHome> = async (context) =>  {
 
 const Home:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ specialProjects }) => {    
 
+    const router = useRouter()
+
     return (
         <BasicLayout>
             <ExploreContainer 
                 title="One Person Creative Studio"
                 description="Let's bring your ideas into reality"
                 content={HomeCelestialBodies}
-                onExplore={() => {}}
+                onExplore={() => router.push('#purposes')}
             />
             
             <section id="purposes" className="bg-secondary flex flex-col justify-between home home__purposes">

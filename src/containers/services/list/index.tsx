@@ -1,29 +1,28 @@
 import React, { useState } from 'react'
-import { StudyProps } from '../../../pages/studies/all'
 import { StudyCard } from '../../../components/studies/card'
 import { ButtonCircle } from '../../../components/buttons/circle'
 
 interface StudiesAllContainer {
     color?: 'primary' | 'secondary',
-    studies: StudyProps[],
+    services: any[],
     action: () => void
 }
 
-export const StudiesAllContainer:React.FC<StudiesAllContainer> = ({ studies, color = 'secondary', action }) => {
+export const ServicesListContainer:React.FC<StudiesAllContainer> = ({ services, color = 'secondary', action }) => {
 
-    const [currentStudies, setCurrentStudies] = useState<StudyProps[]>(studies)
+    const [currentServices, setCurrentServices] = useState<any[]>(services)
 
     return (
-        <section className={`bg-${color} flex flex-col align-center justify-center studies-all-container`}>
+        <section className={`bg-${color} flex flex-col align-center justify-center services-list-container`}>
 
-            <article className="studies-all-container__list">
+            <article className="services-list-container__list">
                 {
-                    currentStudies.map(study => (
+                    currentServices.map(service => (
                         <StudyCard 
-                            key={study.id}
-                            title={study.name}
-                            description={study.description}
-                            pilar={study.pilar}
+                            key={service.id}
+                            title={service.name}
+                            description={service.description}
+                            pilar={service.pilar}
                             purposes={[]}
                             color={color === 'primary' ? 'secondary' : 'primary'}
                         />

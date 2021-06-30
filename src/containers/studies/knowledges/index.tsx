@@ -12,7 +12,7 @@ interface KnowledgesContainer {
 
 export const KnowledgesContainer:React.FC<KnowledgesContainer> = ({ position = 'end', color = 'secondary' }) => {
     return (
-        <section className={`relative bg-${color} knowledges-container`}>
+        <section id="knowledges" className={`relative bg-${color} knowledges-container`}>
             <Content
                 position={position}
                 color={color === 'primary' ? 'black' : 'white'}

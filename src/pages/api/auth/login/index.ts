@@ -11,8 +11,13 @@ interface RequestWithUser extends NextApiRequest {
 const app = nextConnect()
 
 
-app.use(auth).post('/api/auth/login', passport.authenticate('local'), (req:RequestWithUser, res:NextApiResponse) => {
-    res.json(req.user)
+app.use(auth).post(passport.authenticate('local'), (req:RequestWithUser, res:NextApiResponse) => {
+    res.status(200).json({
+        status: 200,
+        data: {
+            user: req.user
+        }
+    })
 })
 
 export default app

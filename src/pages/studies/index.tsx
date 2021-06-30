@@ -1,6 +1,7 @@
 import React from 'react'
 import { CurrentStudy, PrismaClient, Service, Study } from '@prisma/client'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useRouter } from 'next/router'
 
 import { StudiesCelestialBodies } from '../../tools/content/celestialBodies'
 
@@ -61,7 +62,8 @@ export const getStaticProps:GetStaticProps<StudiesProps> = async (context) => {
 
 const Studies:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ currentStudy }) => {
 
-    console.log(currentStudy)
+    const router = useRouter()
+
     if(!currentStudy || !currentStudy.study) {
         return (
             <BasicLayout color="primary">
@@ -77,7 +79,7 @@ const Studies:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ curr
                 title="Studies"
                 description="Dreams can come true, but to make this happen we need to understand our world and how it works. The best way to do this is always learning something new, from science, art and/or technology."
                 content={StudiesCelestialBodies}
-                onExplore={() => {}}
+                onExplore={() => router.push('#knowledges')}
                 color="primary"
             />
             <KnowledgesContainer 
