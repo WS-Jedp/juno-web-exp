@@ -30,13 +30,16 @@
 @import '../../components/studies/progress/styles.scss';
 
 @import '../../components/commons/footer/styles.scss';
+@import '../../components/commons/locationMenuIcon/styles.scss';
 
 @import '../../containers/header/styles.scss';
 @import '../../containers/locations/styles.scss';
 @import '../../containers/explore/styles.scss';
-@import '../../containers/services/styles.scss';
 @import '../../containers/processes/styles.scss';
 @import '../../containers/contact/styles.scss';
+
+@import '../../containers/services/styles.scss';
+@import '../../containers/services/list/styles.scss';
 
 @import '../../containers/projects/special/styles.scss';
 @import '../../containers/projects/last/styles.scss';
@@ -47,6 +50,7 @@
 
 @import '../../containers/ideas/related/styles.scss';
 @import '../../containers/ideas/main/styles.scss';
+@import '../../containers/ideas/list/styles.scss';
 
 @import '../../containers/studies/knowledges/styles.scss';
 @import '../../containers/studies/current/styles.scss';
@@ -62,3 +66,4 @@
 @import './page/projects/styles.scss';
 @import './page/projects/story/styles.scss';
 @import './page/manifest/styles.scss';
+@import './page/login/juno/styles.scss';

@@ -28,7 +28,7 @@ export const locationsOptions = (action: (title:string) => void):LocationOptions
             },
             contents: [
                 {title: 'Projects', link: '/projects', abstract: 'Know all the projects of Juno'},
-                {title: 'Allies', link: '/allies', abstract: 'Meet the angels'}
+                // {title: 'Partners', link: '/Partners', abstract: 'Meet the friends and partners of Juno'}
             ]
         },
         {
@@ -49,7 +49,7 @@ export const locationsOptions = (action: (title:string) => void):LocationOptions
                 link: '/ideas'
             },
             contents: [
-                {title: 'Ideas', link: '/ideas', abstract: 'Know more about the ideas of Juno'},
+                {title: 'State', link: '/ideas', abstract: 'Know more about the ideas of Juno'},
             ]
         }
     ]

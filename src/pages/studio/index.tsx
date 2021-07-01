@@ -1,6 +1,7 @@
 import React from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Project, PrismaClient, Partner } from '@prisma/client'
+import { useRouter } from 'next/router'
 
 import { StudioCelestialBodies } from '../../tools/content/celestialBodies'
 
@@ -34,12 +35,14 @@ export const getStaticProps:GetStaticProps<PropsStudio> = async (context) => {
 
 const Studio:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ lastProjects, partners }) => {
 
+    const router = useRouter()
+
     return (
         <BasicLayout color="secondary">
             <ExploreContainer
                 title="Studio"            
                 description="Find out all the services that can help you to make your idea reality. Also find out all the projects and ideas that Juno and his allies have been working on"
-                onExplore={() => {}}
+                onExplore={() => router.push('#services')}
                 color="secondary"
                 content={StudioCelestialBodies}
 

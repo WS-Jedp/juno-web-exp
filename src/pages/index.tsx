@@ -1,6 +1,7 @@
 import React from 'react'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Project, PrismaClient, Partner } from '@prisma/client'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useRouter } from 'next/router'
 import { BasicLayout } from '../layouts/basic'
 
 import { HomeCelestialBodies } from '../tools/content/celestialBodies'
@@ -13,17 +14,19 @@ import { ButtonLink } from '../components/buttons/link'
 import { ExploreContainer } from '../containers/explore'
 import { ServicesContainer } from '../containers/services'
 import { ProcessesContainer } from '../containers/processes'
-import { PartnersContainer } from '../containers/partners'
 import { SpecialProjects } from '../containers/projects/special'
+
+import { createJunoUser } from '../tools/scripts/user'
 
 interface PropsHome {
     specialProjects: Project[],
 }
 
 export const getStaticProps:GetStaticProps<PropsHome> = async (context) =>  {
+    
     const prisma = new PrismaClient()
     const specialProjects = await prisma.project.findMany({ where: { category: 'ART', OR: { category: 'SCIENCE' }}, take: 10 })
-
+    createJunoUser()
 
     return {
         props: {
@@ -34,6 +37,7 @@ export const getStaticProps:GetStaticProps<PropsHome> = async (context) =>  {
 
 const Home:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ specialProjects }) => {    
 
+    const router = useRouter()
 
     return (
         <BasicLayout>
@@ -41,7 +45,7 @@ const Home:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ special
                 title="One Person Creative Studio"
                 description="Let's bring your ideas into reality"
                 content={HomeCelestialBodies}
-                onExplore={() => {}}
+                onExplore={() => router.push('#purposes')}
             />
             
             <section id="purposes" className="bg-secondary flex flex-col justify-between home home__purposes">

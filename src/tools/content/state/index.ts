@@ -8,19 +8,19 @@ export const ideaCategories:IdeaCategories = {
     'articles': {
         title: 'Articles',
         abstract: 'Learn something new',
-        link: '/state/articles',
+        link: '/ideas/articles',
         color: 'purple'
     },
     'essays': {
         title: 'Essays',
         abstract: 'Find out the ideas of Juno',
-        link: '/state/essays',
+        link: '/ideas/essays',
         color: 'light-blue'
     },
     'state': {
         title: 'State',
         abstract: 'Find out the state of juno',
-        link: '/state/blog',
+        link: '/ideas/blog',
         color: 'main'
     }
 }

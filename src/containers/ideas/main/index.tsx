@@ -3,21 +3,19 @@ import { IdeaProps } from '../../../pages/ideas/index'
 
 import { Content } from '../../../components/content'
 import { IdeaCard } from '../../../components/ideas/card'
-import { ButtonCircle } from '../../../components/buttons/circle'
 import { ButtonLink } from '../../../components/buttons/link'
 
 interface MainIdeasContainer {
     color?: 'primary' | 'secondary',
     ideas: IdeaProps[],
-    action: () => void
 }
 
-export const MainIdeasContainer:React.FC<MainIdeasContainer> = ({ ideas, action, color = 'primary' }) => {
+export const MainIdeasContainer:React.FC<MainIdeasContainer> = ({ ideas, color = 'primary' }) => {
 
     const [mainIdeas, setMainIdeas] = useState<IdeaProps[]>(ideas)
 
     return (
-        <section className={`bg-${color} main-ideas-container`}>
+        <section id="main-ideas" className={`bg-${color} main-ideas-container`}>
 
             <Content
                 color={color === 'primary' ? 'white' : 'black'}

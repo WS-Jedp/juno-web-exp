@@ -10,7 +10,7 @@ interface ServicesContainer {
 
 export const ServicesContainer:React.FC<ServicesContainer> = ({ position, color = 'secondary' }) => {
     return (
-        <section className={`bg-${color === 'secondary' ? 'secondary' : 'primary'} flex flex-col services-container services-container__services`}>
+        <section id="services" className={`bg-${color === 'secondary' ? 'secondary' : 'primary'} flex flex-col services-container services-container__services`}>
                 <Content
                     position={position}
                     size="mid"

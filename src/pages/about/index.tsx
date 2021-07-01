@@ -1,6 +1,7 @@
 import React from 'react'
 import { Project, PrismaClient } from '@prisma/client'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import router, { useRouter } from 'next/router' 
 
 import { AboutCelestialBodies } from '../../tools/content/celestialBodies'
 
@@ -35,6 +36,8 @@ export const getStaticProps:GetStaticProps<AboutProps> = async (context) => {
 
 const About:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ personalProjects }) => {
 
+    const router = useRouter()
+
     return (
         <BasicLayout color="primary">
             <ExploreContainer 
@@ -42,9 +45,9 @@ const About:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ person
                 description="Juno is an One Person Creative Studio based in Medellín, Colombia that helps you to convert your ideas into meaningful projects that impact the life of people, generating changes in our society and keep moving forward the humankind."
                 content={AboutCelestialBodies}
                 color="primary"
-                onExplore={() => {}}
+                onExplore={() => router.push('#juno')}
             />
-            <section className="bg-secondary about about__content">
+            <section id="juno" className="bg-secondary about about__content">
                 <Content 
                     position="end"
                     color="white"

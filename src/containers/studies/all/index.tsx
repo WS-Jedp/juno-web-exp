@@ -30,11 +30,11 @@ export const StudiesAllContainer:React.FC<StudiesAllContainer> = ({ studies, col
                     ))
                 }
             </article>
-            <ButtonCircle 
+            {/* <ButtonCircle 
                 title="Load More"
                 color={color}
                 action={action}
-            />
+            /> */}
         </section>
     )
 }

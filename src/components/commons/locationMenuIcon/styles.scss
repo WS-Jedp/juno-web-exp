@@ -1,0 +1,25 @@
+.location-menu-icon {
+    position: relative;
+
+    &__line {        
+        width: 30px;
+        height: 3px;
+        margin: $space-base-sm 0;
+        background-color: var(--color-secondary);
+        transition: .9s ease-in-out;
+
+        &--first {
+
+            &-close {
+                transform: rotate(45deg);
+            }
+        }
+        &--second {
+            &-close {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    
+}

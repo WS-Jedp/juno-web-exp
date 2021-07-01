@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion'
 
 import { LogoParticle } from '../../components/logos/Particle'
 import { LogoWaves } from '../../components/logos/Waves/black'
+import { LocationMenuIcon } from '../../components/commons/locationMenuIcon'
 
 interface Header {
     color?: AvailableColors
@@ -24,8 +25,11 @@ export const Header:React.FC<Header> = ({ color = 'primary' }) => {
                         juno
                     </h1>
                 </a>
-                <div className="font-serif header__particle" onClick={() => setShowLocations(!showLocations)}>
-                    <LogoParticle color={`${color == 'purple' || color == 'black' || color == 'primary' ? 'white' : 'black'}`} />
+                <div className="font-serif header__particle">
+                    {/* <LogoParticle color={`${color == 'purple' || color == 'black' || color == 'primary' ? 'white' : 'black'}`} /> */}
+                    <LocationMenuIcon 
+                        action={() => setShowLocations(!showLocations)}
+                    />
                 </div>
             </article>
 
