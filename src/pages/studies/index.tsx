@@ -19,7 +19,7 @@ interface StudyProps extends Omit<Study, 'startedAt'|'masteredAt'> {
 export type CurrentStudyWithStudy = (CurrentStudy & { study: StudyProps | null }) | null
 
 interface StudiesProps {
-    currentStudy: CurrentStudyWithStudy
+    currentStudy: CurrentStudyWithStudy | null
 }
 
 export const getStaticProps:GetStaticProps<StudiesProps> = async (context) => {
@@ -27,35 +27,18 @@ export const getStaticProps:GetStaticProps<StudiesProps> = async (context) => {
     const prisma = new PrismaClient()
     const currentStudy = await prisma.currentStudy.findFirst({include: { study: true }})
     
-    // if(!currentStudy || !currentStudy.study) {
-    //     return {
-    //         props: {
-    //             currentStudy: null
-    //         }    
-    //     }
-    // }
-
-    // {...currentStudy, study: { ...study, masteredAt: study.masteredAt?.toString(), startedAt: study.startedAt.toString() }}
-
-    // const study = currentStudy.study
+    if(!currentStudy || !currentStudy.study) {
+        return {
+            props: {
+                currentStudy: null
+            }    
+        }
+    }
+    const study = currentStudy.study
+    
     return {
         props: {
-            currentStudy: {
-                id: 1,
-                progress: 90,
-                studyId: 1,
-                study: {
-                    id: 1,
-                    description: 'Programming language with great focus on data management and mathematics.',
-                    name: 'Python',
-                    experience: 'Mid',
-                    pilar: 'SCIENCE',
-                    startedAt: new Date().toString(),
-                    state: 'MASTERED',
-                    masteredAt: new Date().toString(),
-                    whyNeeded: null
-                }
-            }
+            currentStudy: {...currentStudy, study: {...study, startedAt: study.startedAt.toString(), masteredAt: study.masteredAt && study.masteredAt.toString()}}
         }
     }
 }

@@ -1,5 +1,5 @@
 import nextConnect from 'next-connect'
-import { PrismaClient, IdeaCategory, Idea, StoryContent } from '@prisma/client'
+import { PrismaClient, Idea, StoryContent } from '@prisma/client'
 import { NextApiRequest, NextApiResponse,  } from 'next'
 
 interface RequestWithUser extends NextApiRequest {

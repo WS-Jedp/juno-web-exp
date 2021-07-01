@@ -1,5 +1,5 @@
 import nextConnect from 'next-connect'
-import { PrismaClient, Service, PILARS } from '@prisma/client'
+import { PrismaClient, Service, PILLARS } from '@prisma/client'
 import { NextApiRequest, NextApiResponse,  } from 'next'
 
 import auth from '../../../middlewares/auth'
@@ -25,11 +25,11 @@ interface ResponseGetIdeas {
 interface RequestBodyPost {
     name: string,
     description: string,
-    pilar: PILARS,
-    offeredSince: Date,
-    whyJuno: string,
+    pilar: PILLARS,
+    offeredSince: number,
+    whyJuno?: string,
     whyNeeded: string,
-    studies: {id: number}[]
+    studies: number[]
 }
 
 interface ResponsePostIdea {
@@ -60,6 +60,8 @@ app.get(async (req:RequestWithUser, res:NextApiResponse<ResponseGetIdeas>) => {
 
     const { name, description, pilar, offeredSince, studies, whyJuno, whyNeeded } = req.body as RequestBodyPost
 
+    const studiesMapped = studies.map(study => ({id: study}))
+
     const serviceCreated = await prisma.service.create({ data: { 
         name,
         description,
@@ -68,14 +70,14 @@ app.get(async (req:RequestWithUser, res:NextApiResponse<ResponseGetIdeas>) => {
         whyJuno,
         whyNeeded,
         studies: {
-            connect: studies
+            connect: studiesMapped || []
         }
      }})
 
     res.status(201).json({
         status: 201,
         data: {
-            message: 'Study created',
+            message: 'Service created',
             studyId: serviceCreated.id
         }
     })

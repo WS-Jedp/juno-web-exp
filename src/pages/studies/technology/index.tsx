@@ -9,7 +9,7 @@ import { KnowledgesContent } from '../../../tools/content/studies'
 
 export interface StudyProps extends Omit<Study, 'startedAt'|'masteredAt'> {
     startedAt: string,
-    masteredAt?: string
+    masteredAt?: string | null
 }
 
 interface StudiesProps {
@@ -19,7 +19,7 @@ interface StudiesProps {
 export const getStaticProps:GetStaticProps<StudiesProps> = async () => {
     const prisma = new PrismaClient()
     const studies = await prisma.study.findMany({  where: { pilar: 'TECHNOLOGY' } })
-    const studiesMapped = studies.map(study => ({...study, startedAt: study.startedAt.toString(), masteredAt: study.masteredAt?.toString()}))
+    const studiesMapped = studies.map(study => ({...study, startedAt: study.startedAt.toString(), masteredAt: study.masteredAt && study.masteredAt.toString()}))
 
     return {
         props: {

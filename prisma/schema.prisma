@@ -10,7 +10,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-enum PILARS {
+enum PILLARS {
   SCIENCE
   ART
   TECHNOLOGY
@@ -125,8 +125,8 @@ model Service {
   whyNeeded           String?
   whyJuno             String?
   studies             Study[]
-  pilar               PILARS @default(TECHNOLOGY)
-  offeredSince        DateTime @default(now())
+  pilar               PILLARS @default(TECHNOLOGY)
+  offeredSince        Int
   updatedAt           DateTime?
 }
 
@@ -135,13 +135,20 @@ model Study {
   name                String
   description         String
   whyNeeded           String?
-  experience          String?
+  experience          StudyExperience @default(MIDDLE)
   state               StudyState  @default(MASTERED)
   services            Service[]
-  pilar               PILARS @default(TECHNOLOGY)
+  pilar               PILLARS @default(TECHNOLOGY)
   startedAt           DateTime @default(now())
   masteredAt          DateTime?
   currentStudy        CurrentStudy?
+}
+
+enum StudyExperience {
+  JUNIOR
+  MIDDLE
+  SENIOR
+  MASTER
 }
 
 enum StudyState {
