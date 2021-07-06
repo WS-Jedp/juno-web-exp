@@ -4,7 +4,7 @@ import { Project } from '@prisma/client'
 import { StoryCard } from '../../../components/stories/card'
 import { ButtonCircle } from '../../../components/buttons/circle'
 
-import { ProjectProp } from '../../../pages/about'
+import { ProjectProp } from '../../../pages/projects'
 
 interface ProjectsContainer {
     projects: ProjectProp[],
@@ -26,17 +26,17 @@ export const ProjectsContainer:React.FC<ProjectsContainer> = ({ projects, action
                             size="lg"
                             category={project.category}
                             imageUrl={project.cover}
-                            link={`/project/story/${project.id}`}
+                            link={`/projects/story/${project.id}`}
                             color="primary"
                         />
                     ))
                 }
             </article>
-            <ButtonCircle 
+            {/* <ButtonCircle 
                 title="See All"
                 color="secondary"
                 action={action}
-            />
+            /> */}
         </section>
     )
 }

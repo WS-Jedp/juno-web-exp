@@ -20,7 +20,7 @@ export const ideaCategories:IdeaCategories = {
     'state': {
         title: 'State',
         abstract: 'Find out the state of juno',
-        link: '/ideas/blog',
+        link: '/ideas/state',
         color: 'main'
     }
 }

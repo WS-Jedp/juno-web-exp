@@ -27,11 +27,11 @@ export const MainIdeasContainer:React.FC<MainIdeasContainer> = ({ ideas, color =
             </Content>
 
             <article className="flex align-center justify-between main-ideas-container__ideas">
-                <ButtonLink 
+                {/* <ButtonLink 
                     link="/projects/all"
                     title="See All"
                     color={color === 'primary' ? 'secondary' : 'primary'}
-                />
+                /> */}
                 <div className="flex flex-row main-ideas-container__ideas-list">
                     {
                         mainIdeas.map(idea => (
@@ -40,7 +40,7 @@ export const MainIdeasContainer:React.FC<MainIdeasContainer> = ({ ideas, color =
                                 imageUrl={idea.cover}
                                 abstract={idea.introductoryQuestion}
                                 category={idea.category}
-                                link={`/idea/${idea.id}`}
+                                link={`/ideas/${idea.id}`}
                                 size="lg"
                             />
                         ))

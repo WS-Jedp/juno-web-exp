@@ -1,4 +1,5 @@
 import React, { MouseEventHandler } from 'react'
+import { motion as m } from 'framer-motion'
 
 import { AvailableColors } from '../../../tools/types/colors'
 import { defineBackgroundColor } from '../../../tools/functions/defineBackgroundColor'
@@ -6,17 +7,18 @@ import { defineBackgroundColor } from '../../../tools/functions/defineBackground
 interface ButtonCircleProps {
     color?: AvailableColors,
     title: string,
-    action: MouseEventHandler
+    action: MouseEventHandler,
+    variants?: {[key:string]: any}
 }
 
-export const ButtonCircle:React.FC<ButtonCircleProps> = ({ action, title, color = 'secondary' }) => {
+export const ButtonCircle:React.FC<ButtonCircleProps> = ({ action, title, color = 'secondary', variants }) => {
 
     return (
-        <button className={`font-thin ${defineBackgroundColor({color})} button-circle`} onClick={action}>
+        <m.button variants={variants} className={`font-thin ${defineBackgroundColor({color})} button-circle`} onClick={action}>
             {
                 title
             }
-        </button>
+        </m.button>
 
     )
 } 

@@ -21,8 +21,8 @@ interface IdeasProps {
 export const getStaticProps:GetStaticProps<IdeasProps> = async () => {
 
     const prisma = new PrismaClient()
-    const ideas = await prisma.idea.findMany({ where: { category: 'ESSAY' }, take: 3 })
-    const ideasMapped = ideas.map(idea => ({...idea, createdAt: idea.createdAt.toString(), updatedAt: idea.updatedAt?.toString()}))
+    const ideas = await prisma.idea.findMany()
+    const ideasMapped = ideas.map(idea => ({...idea, createdAt: idea.createdAt.toString(), updatedAt: idea.updatedAt && idea.updatedAt?.toString()}))
 
     return {
         props: {
@@ -47,7 +47,6 @@ const Ideas:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({ ideas 
             <MainIdeasContainer 
                 color="secondary"
                 ideas={ideas}
-                action={() => {}}
             />
         </BasicLayout>
     )

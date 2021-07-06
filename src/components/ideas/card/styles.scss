@@ -12,8 +12,8 @@
     @include transition(.9s);
 
     @include tablet {
-        min-width: 330px;
-        max-width: 360px;
+        min-width: 420px;
+        max-width: 420px;
         padding: $space-sm-lg;
     }
 
@@ -24,17 +24,19 @@
 
     &--size-{
         &lg {
-            max-height: 360px;
+            max-height: 270px;
+            min-height: 270px;
 
             @include tablet {
-                max-height: 390px;
+                min-height: 240px;
+                max-height: 240px;
             }
         }
 
         &md {
             max-height: 210px;   
             @include tablet {
-                max-height: 240px;
+                max-height: 270px;
             }
         }
     }

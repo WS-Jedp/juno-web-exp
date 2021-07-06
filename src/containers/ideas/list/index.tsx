@@ -17,7 +17,7 @@ export const IdeasList:React.FC<IdeasList> = ({ ideas, color = 'primary' }) => {
         <section className={`bg-${color} ideas-container`}>
             <article className="flex align-center justify-between ideas-container__ideas">
                 <ButtonLink 
-                    link="/projects/all"
+                    link="/ideas"
                     title="See All"
                     color={color === 'primary' ? 'secondary' : 'primary'}
                 />
@@ -29,7 +29,7 @@ export const IdeasList:React.FC<IdeasList> = ({ ideas, color = 'primary' }) => {
                                 imageUrl={idea.cover}
                                 abstract={idea.introductoryQuestion}
                                 category={idea.category}
-                                link={`/idea/${idea.id}`}
+                                link={`/ideas/${idea.id}`}
                                 size="lg"
                             />
                         ))

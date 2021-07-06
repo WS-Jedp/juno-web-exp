@@ -13,8 +13,8 @@ import { ProjectsContainer } from '../../containers/projects/all'
 
 export interface ProjectProp extends Omit<Project, 'createdAt'|'updatedAt'|'finishedAt'> {
     createdAt?: string,
-    updatedAt?: string,
-    finishedAt?: string,
+    updatedAt?: string | null,
+    finishedAt?: string | null,
 }
 
 interface AboutProps {
@@ -26,7 +26,7 @@ export const getStaticProps:GetStaticProps<AboutProps> = async (context) => {
     const prisma = new PrismaClient()
     const personalProjects = await prisma.project.findMany({ where: { category: 'SOCIAL' }, take: 4 })
 
-    const personalProjectsMapped = personalProjects.map(project => ({...project, createdAt: project.createdAt.toString(), updatedAt: project.updatedAt?.toString(), finishedAt: project.finishedAt?.toString()}))
+    const personalProjectsMapped = personalProjects.map(project => ({...project, createdAt: project.createdAt.toString(), updatedAt: project.updatedAt && project.updatedAt.toString(), finishedAt: project.finishedAt && project.finishedAt.toString()}))
     return {
         props: {
             personalProjects: personalProjectsMapped
