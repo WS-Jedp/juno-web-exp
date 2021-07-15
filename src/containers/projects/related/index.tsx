@@ -2,10 +2,11 @@ import React from 'react'
 import { Project } from '@prisma/client'
 
 import { StoryCard } from '../../../components/stories/card'
+import { ProjectProp } from '../../../pages/projects/story/[id]'
 
 interface RelatedProjectsContainer {
     color?: 'primary' | 'secondary',
-    relatedProjects: Project[]
+    relatedProjects: ProjectProp[]
 }
 
 export const RelatedProjectsContainer:React.FC<RelatedProjectsContainer> = ({ color = 'primary', relatedProjects = [] }) => {

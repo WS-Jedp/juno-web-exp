@@ -10,7 +10,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-enum PILARS {
+enum PILLARS {
   SCIENCE
   ART
   TECHNOLOGY
@@ -67,8 +67,8 @@ enum CredentialType {
 model Project {
   id                Int @id @default(autoincrement())
   name              String
-  abstract          String?
-  description       String
+  abstract          String? @db.MediumText
+  description       String  @db.MediumText
   cover             String
   state             ProjectState @default(COMING_SOON)
   category          ProjectCategory @default(SOCIAL)
@@ -93,8 +93,8 @@ enum ProjectState {
 
 model Idea {
   id                      Int @id @default(autoincrement())
-  title                   String
-  abstract                String
+  title                   String  
+  abstract                String  @db.MediumText
   introductoryQuestion    String
   cover                   String
   category                IdeaCategory @default(STATE)
@@ -111,7 +111,7 @@ enum IdeaCategory {
 
 model StoryContent {
   id                Int @id @default(autoincrement())
-  content           String
+  content           String  @db.LongText
   ideaId            Idea?
   projectId         Project?
 }
@@ -125,8 +125,8 @@ model Service {
   whyNeeded           String?
   whyJuno             String?
   studies             Study[]
-  pilar               PILARS @default(TECHNOLOGY)
-  offeredSince        DateTime @default(now())
+  pilar               PILLARS @default(TECHNOLOGY)
+  offeredSince        Int
   updatedAt           DateTime?
 }
 
@@ -135,13 +135,20 @@ model Study {
   name                String
   description         String
   whyNeeded           String?
-  experience          String?
+  experience          StudyExperience @default(MIDDLE)
   state               StudyState  @default(MASTERED)
   services            Service[]
-  pilar               PILARS @default(TECHNOLOGY)
+  pilar               PILLARS @default(TECHNOLOGY)
   startedAt           DateTime @default(now())
   masteredAt          DateTime?
   currentStudy        CurrentStudy?
+}
+
+enum StudyExperience {
+  JUNIOR
+  MIDDLE
+  SENIOR
+  MASTER
 }
 
 enum StudyState {

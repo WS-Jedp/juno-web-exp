@@ -31,7 +31,7 @@ export const AnimationRightToLeft = (transition:TransitionType = TransitionBase)
 export const AnimationTopToBottom = (transition:TransitionType = TransitionBase) => {
     return {
         initial: {
-            y: -30,
+            y: 30,
             opacity: 0
         },
         animate: {
@@ -45,7 +45,7 @@ export const AnimationTopToBottom = (transition:TransitionType = TransitionBase)
 export const AnimationBottomToTop = (transition:TransitionType = TransitionBase) => {
     return {
         initial: {
-            y: 30,
+            y: -30,
             opacity: 0
         },
         animate: {
@@ -55,3 +55,13 @@ export const AnimationBottomToTop = (transition:TransitionType = TransitionBase)
         }
     }
 }
+
+export const AnimationFatherContainer = (transition: TransitionType = TransitionBase) => ({
+    initial: {
+        opacity: 0
+    },
+    animate: {
+        opacity: 1,
+        transition: {...transition, when: 'beforeChildren', staggerChildren: .6}
+    }
+})

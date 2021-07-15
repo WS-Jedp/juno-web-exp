@@ -6,9 +6,8 @@ import { KnowledgesContent } from '../../../tools/content/studies'
 
 import { ServicesListContainer } from '../../../containers/services/list'
 
-export interface ServiceProps extends Omit<Service, 'offeredSince'|'updatedAt'> {
-    offeredSince: string,
-    updatedAt?: string
+export interface ServiceProps extends Omit<Service, 'updatedAt'> {
+    updatedAt?: string | null
 }
 
 interface ServicesProps {
@@ -18,7 +17,7 @@ interface ServicesProps {
 export const getStaticProps:GetStaticProps<ServicesProps> = async () => {
     const prisma = new PrismaClient()
     const services = await prisma.service.findMany({ where: { pilar: 'TECHNOLOGY' } })
-    const servicesMapped = services.map(service => ({...service, offeredSince: service.offeredSince.toString(), updatedAt: service.updatedAt?.toString()}))
+    const servicesMapped = services.map(service => ({...service, offeredSince: service.offeredSince, updatedAt: service.updatedAt && service.updatedAt.toString()}))
 
     return {
         props: {

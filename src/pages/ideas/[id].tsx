@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 import { Idea, StoryContent, PrismaClient } from '@prisma/client'
@@ -11,30 +12,32 @@ import { LayoutStory } from '../../layouts/story'
 import { RelatedIdeasContainer } from '../../containers/ideas/related'
 
 interface IdeaProp extends Omit<Idea, 'createdAt'> {
-    createdAt: string,
+    createdAt?: string,
 }
 
 interface PropsStory {
     idea: (IdeaProp & {storyContent: StoryContent | null}) | null
-    relatedIdeas: Idea[],
+    // relatedIdeas: Idea[],
 }
 
 export const getServerSideProps:GetServerSideProps<PropsStory> = async (context) => {
 
     const prisma = new PrismaClient()
     const idea = await prisma.idea.findUnique({ where: { id: Number(context.query.id) }, include: { storyContent: true } })
-    const relatedIdeas = await prisma.idea.findMany({ where: { category: idea?.category, NOT: { id: idea?.id } }, take: 5 })
+    // const relatedIdeas = await prisma.idea.findMany({ where: { category: idea?.category, NOT: { id: idea?.id } }, take: 5 })
 
     return {
         props: {
             idea: idea ? { ...idea, createdAt: idea?.createdAt.toString() } : null,
-            relatedIdeas: relatedIdeas
+            // relatedIdeas: relatedIdeas
         }
     }
 
 }
 
-const IdeaStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ idea, relatedIdeas }) => {
+const IdeaStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ idea }) => {
+
+    const { back } = useRouter()
 
     if(!idea || !idea.storyContent) {
         return (
@@ -54,9 +57,11 @@ const IdeaStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>>
                 <img title={idea.title} alt={idea.title} src={idea.cover} />
             </figure>
             <section className="idea-story idea-story__header">
-                <a className="color-primary">Go Back</a>
-                <h3 className={defineCategoryColor({ category: idea.category.toLowerCase() })}>{idea.category.toLowerCase()}</h3>
-                <h1 className="color-primary">{idea.title}</h1>
+                <a className="color-primary" onClick={() => back()}>Go Back</a>
+                <div className="idea-story__header-title">
+                    <h3 className={defineCategoryColor({ category: idea.category.toLowerCase() })}>{idea.category.toLowerCase()}</h3>
+                    <h1 className="color-primary">{idea.title}</h1>
+                </div>
                 <p className="color-primary">
                     {
                         idea.introductoryQuestion
@@ -74,7 +79,7 @@ const IdeaStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>>
                     children={idea.storyContent.content}
                 />
             </section>
-            {
+            {/* {
                 relatedIdeas.length > 0 && (
                     <RelatedIdeasContainer 
                         relatedIdeas={relatedIdeas}
@@ -82,7 +87,7 @@ const IdeaStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>>
                         color="secondary"
                     />
                 )
-            }
+            } */}
         </LayoutStory>
     )
 }

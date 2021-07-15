@@ -15,6 +15,13 @@
             padding: $space-sm-sm $space-lg-sm;
         }
 
+        &-title {
+            margin: $space-sm-sm 0;
+            & a {
+                cursor: pointer;
+            }
+        }
+
         & a {
             font-size: $text-size-base;
             margin-bottom: $space-sm-sm;
@@ -25,7 +32,10 @@
         }
 
         & h1 {
-            font-size: $text-size-xl + $text-size-xl
+            font-size: $text-size-xl;
+            @include desktop-sm {
+                font-size: $title-size-sm;
+            }
         }
     }
 
@@ -48,27 +58,43 @@
             padding: $space-sm-sm $space-lg-sm;
         }
 
-        & h1, h2, h3, p, a, b, i, small {
+        & h1, h2, h3, p, a, b, i, small, li {
             font-family: $font-sans;
             color: var(--color-primary);
         }
 
         & h1 { 
+            margin: $space-sm-sm 0;
             font-size: $text-size-xl;
         }
 
         & h2 {
+            margin: $space-sm-sm 0;
             font-size: $text-size-lg;
         }
 
         & h3, h4, h5, h6 {
+            margin: $space-sm-sm 0;
             font-size: $text-size-md;
         }
 
-        & p {
+        & li {
+            list-style: circle;
+        }
+
+        & p, a, li {
             font-size: $text-size-base;
-            line-height: 24px;
+            font-weight: 300;
+            line-height: 30px;
             margin-bottom: $space-sm-sm;
+        }
+
+        & a {
+            font-weight: 500;
+            text-decoration: underline;
+            &:hover {
+                color: $color-main;
+            }
         }
         
         & img {

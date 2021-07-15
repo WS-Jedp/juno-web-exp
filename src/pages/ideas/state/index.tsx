@@ -18,7 +18,7 @@ export const getStaticProps:GetStaticProps<IdeasProps> = async () => {
 
     const prisma = new PrismaClient()
     const ideas = await prisma.idea.findMany({ where: { category: 'STATE' } })
-    const ideasMapped = ideas.map(idea => ({...idea, createdAt: idea.createdAt.toString(), updatedAt: idea.updatedAt?.toString()}))
+    const ideasMapped = ideas.map(idea => ({...idea, createdAt: idea.createdAt.toString(), updatedAt: idea.updatedAt && idea.updatedAt.toString()}))
 
     return {
         props: {
