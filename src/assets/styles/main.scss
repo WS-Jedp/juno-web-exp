@@ -27,10 +27,19 @@
 @import '../../components/process/card/styles.scss';
 @import '../../components/stories/card/styles.scss';
 @import '../../components/studies/card/styles.scss';
+@import '../../components/studies/mediumCard/styles.scss';
 @import '../../components/studies/progress/styles.scss';
 
 @import '../../components/commons/footer/styles.scss';
 @import '../../components/commons/locationMenuIcon/styles.scss';
+
+@import '../../components/knowledges/card/styles.scss';
+
+@import '../../components/projects/card/styles.scss';
+
+@import '../../components/experience/card/styles.scss';
+
+@import '../../containers/knowledges/renderListKnowledges/styles.scss';
 
 @import '../../containers/header/styles.scss';
 @import '../../containers/locations/styles.scss';
@@ -67,3 +76,4 @@
 @import './page/projects/story/styles.scss';
 @import './page/manifest/styles.scss';
 @import './page/login/juno/styles.scss';
+@import './page/vitae/styles.scss';
