@@ -1,0 +1,21 @@
+
+.orbital-way {
+    position: relative;
+    width: 2.1px;
+    height: 100%;
+    max-height: 420px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+    &-container {
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-items: flex-start;
+        height: 90%;
+        max-height: 420px;
+    }
+}

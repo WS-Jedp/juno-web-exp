@@ -1,0 +1,64 @@
+
+.location-card {
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    padding: $space-base-md;
+    cursor: pointer;
+    min-width: 270px;
+    width: 90%;
+    max-width: 270px;
+    height: 120px;
+    margin: $space-base-lg;
+    @include transition(.6s);
+
+    & h2, p {
+        margin: $space-base-sm;
+    }
+
+    & h2 {
+        font-size: $text-size-sm;
+    }
+
+    & p {
+        font-size: $text-size-base-md;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background-color: $color-main;
+        border: 1px solid $color-main;
+        color: $color-light;
+        @include shadow($color-main, 0, 0, .1rem, .9rem, .3)
+    } 
+
+
+    @include tablet {
+        min-width: 330px;
+        max-width: 330px;
+        height: 150px;
+
+        & h2 {
+            font-size: $text-size-md;
+        }
+
+        & p {
+            font-size: $text-size-base;
+        }
+    }
+
+
+    @include desktop-sm {
+        min-width: 510px;
+        max-width: 510px;
+        height: 150px;
+        padding: $space-sm-sm;
+
+        & h2 {
+            font-size: $text-size-xl;
+        }
+
+        & p {
+            font-size: $text-size-sm;
+        }
+    }
+}

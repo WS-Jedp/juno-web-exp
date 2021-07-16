@@ -1,0 +1,92 @@
+
+.header {
+    position: sticky;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    padding: $space-base-sm;
+    z-index: 99;
+    @include transition(.9s);
+    @include shadow($color-dark, 0, 1px, .1rem, 1.2rem, .6);
+
+    @include desktop-sm {
+        padding: $space-sm-md;
+        height: 90px;
+    }
+
+    &__juno-logo {
+        cursor: pointer;
+        &:hover {
+            text-decoration: none;
+        }
+        & svg {       
+            width: 60px;
+            height: 60px;
+
+            @include desktop-sm {
+                width: 72px;
+                height: 72px;
+            }
+        }
+
+        & h1 {
+            font-size: $text-size-base-md;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+    }
+
+
+    &__particle {
+        cursor: pointer;
+
+        & svg {       
+            width: 42px;
+            height: 42px;
+
+            @include desktop-sm {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+    
+    &__menu {
+        margin: auto;   
+        padding: $space-sm-md;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    
+    &--show-locations {
+        box-shadow: none;
+    }
+
+    
+
+    &--color- {
+        &primary {
+            color: var(--color-secondary);
+        }
+        &secondary {
+            color: var(--color-primary);
+        }
+
+        &white {
+            color: $color-light;
+        }
+
+        &dark {
+            color: $color-dark;
+        }
+    }
+
+
+}

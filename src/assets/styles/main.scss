@@ -1,0 +1,79 @@
+@use './partials' as *;
+
+@import '../../components/allies/card/styles.scss';
+
+@import '../../components/buttons/circle/styles.scss';
+@import '../../components/buttons/link/styles.scss';
+
+@import '../../components/content/styles.scss';
+
+@import '../../components/ideas/card/styles.scss';
+@import '../../components/ideas/categoryCard/styles.scss';
+
+@import '../../components/location/card/styles.scss';
+@import '../../components/location/orbit/styles.scss';
+
+@import '../../components/logos/Particle/styles.scss';
+@import '../../components/logos/StandardParticle/styles.scss';
+@import '../../components/logos/Waves/black/styles.scss';
+
+@import '../../components/orbitalWay/styles.scss';
+@import '../../components/orbitalWay/celestialBody/styles.scss';
+@import '../../components/orbitalWay/information/styles.scss';
+@import '../../components/orbitalWay/standard/styles.scss';
+
+@import '../../components/pilars/card/styles.scss';
+
+@import '../../components/process/card/styles.scss';
+@import '../../components/stories/card/styles.scss';
+@import '../../components/studies/card/styles.scss';
+@import '../../components/studies/mediumCard/styles.scss';
+@import '../../components/studies/progress/styles.scss';
+
+@import '../../components/commons/footer/styles.scss';
+@import '../../components/commons/locationMenuIcon/styles.scss';
+
+@import '../../components/knowledges/card/styles.scss';
+
+@import '../../components/projects/card/styles.scss';
+
+@import '../../components/experience/card/styles.scss';
+
+@import '../../containers/knowledges/renderListKnowledges/styles.scss';
+
+@import '../../containers/header/styles.scss';
+@import '../../containers/locations/styles.scss';
+@import '../../containers/explore/styles.scss';
+@import '../../containers/processes/styles.scss';
+@import '../../containers/contact/styles.scss';
+
+@import '../../containers/services/styles.scss';
+@import '../../containers/services/list/styles.scss';
+
+@import '../../containers/projects/special/styles.scss';
+@import '../../containers/projects/last/styles.scss';
+@import '../../containers/projects/all/styles.scss';
+@import '../../containers/projects/related/styles.scss';
+
+@import '../../containers/partners/styles.scss';
+
+@import '../../containers/ideas/related/styles.scss';
+@import '../../containers/ideas/main/styles.scss';
+@import '../../containers/ideas/list/styles.scss';
+
+@import '../../containers/studies/knowledges/styles.scss';
+@import '../../containers/studies/current/styles.scss';
+@import '../../containers/studies/all/styles.scss';
+
+@import '../../layouts/basic/styles.scss';
+@import '../../layouts/smallBasic/styles.scss';
+@import '../../layouts/story/styles.scss';
+
+@import './page/home/style.scss';
+@import './page/ideas/story/styles.scss';
+@import './page/about/styles.scss';
+@import './page/projects/styles.scss';
+@import './page/projects/story/styles.scss';
+@import './page/manifest/styles.scss';
+@import './page/login/juno/styles.scss';
+@import './page/vitae/styles.scss';

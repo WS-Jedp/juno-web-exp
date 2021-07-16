@@ -1,0 +1,70 @@
+
+.ally-card {
+    width: 42%;
+    min-width: 300px;
+    width: 300px;
+    justify-content: center;
+    max-width: 150px;
+    min-height: 150px;
+    max-height: 150px;
+    padding: $space-base-xl;
+    cursor: pointer;
+    overflow: none;
+    @include transition(.6s);
+
+    @include tablet {
+        min-width: 210px;
+        width: 210px;
+        max-width: 210px;
+    }
+
+    @include desktop-sm {
+        justify-content: initial;
+        min-width: 300px;
+        width: 42%;
+        max-width: 300px;
+        min-height: 120px;
+        max-height: 120px;
+    }
+
+    & small {
+        font-size: $text-size-base-md;
+    }
+
+    & h3, p {
+        color: var(--color-secondary);
+    }
+
+    & h3 {
+        font-size: $text-size-md;
+    }
+    & p {
+        font-size: $text-size-base-sm;
+        @include desktop-sm {
+            font-size: $text-size-base-md;
+        }
+    }
+
+    &--color-white, &--color-secondary {
+        & h3, p {
+            color: var(--color-primary);
+        }
+        box-shadow: 0 0 .3rem .1rem rgba(var(--color-primary-rgb), .1);
+        @include tablet {
+            box-shadow: initial;
+        }
+        &:hover {
+            box-shadow: 0 0 1.2rem .1rem rgba(var(--color-primary-rgb), .1);
+        }
+    }
+    &--color-black, &--color-primary {
+        &:hover {
+            box-shadow: 0 0 1.2rem .1rem rgba(var(--color-secondary-rgb), .1);
+        }
+        @include tablet {
+            box-shadow: initial;
+        }
+        box-shadow: 0 0 .3rem .1rem rgba(var(--color-secondary-rgb), .1);
+
+    }
+}

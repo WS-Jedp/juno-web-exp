@@ -1,0 +1,15 @@
+.basic-layout {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+
+    &__content {
+        width: 100%;
+        height: auto;
+
+        @include tablet {
+            margin: auto;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+.vitae {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+
+
+    &__header {
+        width: 100%;
+        padding: $space-sm-md;
+        margin-bottom: $space-md-sm;
+
+        @include desktop-sm {
+            padding: $space-lg-md;
+            margin-bottom: .6rem;
+        }
+
+        p {
+            font-style: italic;
+        }
+    }
+
+    &__juno {
+        cursor: pointer;
+        & h1 {
+            font-size: 2.4rem;
+            letter-spacing: .3rem;
+            font-weight: 300;
+            margin: .3rem;
+        }
+        & small {
+            font-size: 1.5rem;
+            font-weight: 100;
+        }
+
+        & img {
+            margin: $space-sm-sm;
+        }
+    } 
+
+    &__container {
+        width: 100%;
+        @include desktop-sm {
+            width: 60%;
+        }
+
+        &-resume {
+            padding: $space-sm-md;
+            @include desktop-sm {
+                padding: $space-lg-sm 0;
+            }
+        }
+
+        &-skills {
+            padding: $space-sm-md;
+            margin-bottom: $space-sm-sm;
+
+            @include desktop-sm {
+                padding: $space-sm-md 0;
+                margin: $space-sm-md 0;
+            }
+            &-title {
+                font-size: 4.2rem;
+            }
+        }
+    }
+
+    &__footer {
+        width: 100%;;
+        min-height: 100vh;
+        height: 100vh;
+
+        &-text {
+            margin: $space-sm-sm;
+            & p, a, h1, h2 {
+                letter-spacing: .1rem;;
+                font-size: 2.1rem;
+                font-weight: 300;
+            }
+
+            & h1 {
+                font-size: 2.4rem;
+                font-weight: 700;
+            }
+
+            & a {
+                margin: .3rem;
+                text-decoration: underline;
+                cursor: pointer;
+                &:hover {
+                    color: $color-main;
+                }
+            }
+        }
+    }
+
+
+}

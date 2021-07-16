@@ -1,0 +1,14 @@
+.login {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    &__form {
+        min-width: 300px;
+        width: 60%;
+        max-width: 330px;
+        padding: $space-sm-sm;
+        min-height: 300px;
+        @include shadow(var(--color-secondary-rgb), 0, 0, .1rem, 1.5rem, .1);
+    }
+}

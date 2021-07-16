@@ -1,0 +1,15 @@
+.button-link {
+    font-size: $text-size-xl;
+    cursor: pointer;
+
+    @include desktop-sm {
+        font-size: $title-size-sm;
+    }
+
+    &--primary {
+        color: var(--color-primary);
+    }
+    &--secondary {
+        color: var(--color-secondary);
+    }
+}

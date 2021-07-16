@@ -1,0 +1,45 @@
+.explore-container {
+    padding: $space-sm-lg;
+
+    @include desktop-sm {
+        padding: 0 $space-lg-sm;
+    }
+
+    &__title {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        height: 90vh;
+        align-items: center;
+        justify-content: space-between;
+    
+        &-text {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: flex-start;
+            justify-content: space-around;
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+    
+            @include desktop-sm {
+                width: 70%;
+                height: 100%;
+            }
+        }
+    
+        &-content {
+            display: none;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+    
+            @include desktop-sm {
+                display: flex;
+                width: 30%;
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.project-story {
+    padding: $space-sm-lg;
+    background-color: var(--color-secondary);
+    
+    @include desktop-sm {
+        padding: $space-lg-sm;
+        width: 72%;
+        margin: auto;
+    }
+
+    &__header {
+        padding: $space-sm-sm;
+        
+        @include desktop-sm {
+            padding: $space-sm-sm $space-lg-sm;
+        }
+
+        &-title {
+            margin: $space-sm-sm 0;
+            & a {
+                cursor: pointer;
+            }
+        }
+
+        & a {
+            font-size: $text-size-base;
+            margin-bottom: $space-sm-sm;
+        }
+
+        & h3 {
+            font-size: $text-size-sm;
+        }
+
+        & h1 {
+            font-size: $text-size-xl;
+            @include desktop-sm {
+                font-size: $title-size-sm;
+            }
+        }
+    }
+
+    &__cover {
+        position: relative;
+        width: 100%;
+        height: 42vh;
+        overflow: hidden;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+
+    &__content {
+        padding: $space-sm-sm;
+        @include desktop-sm {
+            padding: $space-sm-sm $space-lg-sm;
+        }
+
+        & h1, h2, h3, p, a, b, i, small, li {
+            font-family: $font-sans;
+            color: var(--color-primary);
+        }
+
+        & h1 { 
+            margin: $space-sm-sm 0;
+            font-size: $text-size-xl;
+        }
+
+        & h2 {
+            margin: $space-sm-sm 0;
+            font-size: $text-size-lg;
+        }
+
+        & h3, h4, h5, h6 {
+            margin: $space-sm-sm 0;
+            font-size: $text-size-md;
+        }
+
+        & li {
+            list-style: circle;
+        }
+
+        & p, a, li {
+            font-size: $text-size-base;
+            font-weight: 300;
+            line-height: 30px;
+            margin-bottom: $space-sm-sm;
+        }
+
+        & a {
+            font-weight: 500;
+            text-decoration: underline;
+            &:hover {
+                color: $color-main;
+            }
+        }
+        
+        & img {
+            width: 100%;
+            height: 300px;
+            margin: $space-sm-sm 0;
+            object-fit: cover;
+            @include shadow($color-purple, 0, 0, .3rem, .3rem, .1);
+        }
+    }
+
+    &__not-found {
+        width: 100%;
+        height: 60vh;
+
+        & h3 {
+            text-align: center;
+        }
+    }
+}

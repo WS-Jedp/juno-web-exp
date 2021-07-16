@@ -1,0 +1,1 @@
+export type PILLARS = 'science' | 'art' | 'technology' | 'SCIENCE' | 'ART' | 'TECHNOLOGY'
