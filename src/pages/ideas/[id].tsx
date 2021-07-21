@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
@@ -53,6 +54,16 @@ const IdeaStory:React.FC<InferGetServerSidePropsType<typeof getServerSideProps>>
 
     return (
         <LayoutStory color="primary">
+            <Head>
+                <title>Juno - {idea.title}</title>
+                <link rel="shortcut icon" href="images/favicon/juno.ico" type="image/x-icon" />
+                <meta name="description" content={idea.abstract}></meta>
+                <meta property="og:type" content="website"></meta>
+                <meta property="og:title" content={`Juno's Idea - ${idea.title}`}></meta>
+                <meta property="og:description" content={idea.abstract}></meta>
+                <meta property="og:image" content={idea.cover}></meta>
+                <meta property="og:url" content="permalink"></meta>
+            </Head>
             <figure className="idea-story__cover">
                 <img title={idea.title} alt={idea.title} src={idea.cover} />
             </figure>
