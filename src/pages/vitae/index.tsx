@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { BACKEND_TECHNOLOGIES, DATABASES, FRONTEND_TECHNOLOGIES, LANGUAGES, EDUCATION, PROJECTS, EXPERIENCES } from '../../tools/content/vitae'
@@ -23,6 +24,15 @@ const Vitae:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = () => {
 
     return (
         <section className="bg-primary relative flex flex-col align-center vitae">
+            <Head>
+                <title>Juno Vitae</title>
+                <meta name="description" content="Know more about the person behind Juno and his experience. Here you will find a web version of his CV and resume."></meta>
+                <meta property="og:type" content="website"></meta>
+                <meta property="og:title" content="Juno's Curriculum Vitae"></meta>
+                <meta property="og:description" content="Know more about the person behind Juno and his experience. Here you will find a web version of his CV and resume."></meta>
+                <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/juno-a3f47.appspot.com/o/cover-vitae.png?alt=media&token=0319e3c3-e70c-4dc0-bae7-de61dbe0767d"></meta>
+                <meta property="og:url" content="permalink"></meta>
+            </Head>
             <header className="flex flex-row align-center justify-between vitae__header">
                 <p className="font-serif color-secondary">Willing to dream</p>
                 <p className="font-serif color-secondary">Let's create a new world</p>
@@ -116,7 +126,7 @@ const Vitae:React.FC<InferGetStaticPropsType<typeof getStaticProps>> = () => {
                     <a target="_blank" className="color-primary font-serif" href="https://github.com/WS-Jedp">Github</a>
                 </article>
                 <article className="vitae__footer-text">
-                    <p className="color-primary font-serif">You can download my CV <a target="_blank" className="color-primary font-serif" href="cv/juno-cv.pdf">Here</a></p>
+                    <p className="color-primary font-serif">You can download my CV <a target="_blank" className="color-primary font-serif" href="cv/juno-cv-v3.pdf">Here</a></p>
                 </article>
             </footer>
         </section>
